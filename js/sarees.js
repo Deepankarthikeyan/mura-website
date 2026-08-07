@@ -10,7 +10,7 @@ function sareeProductCard(s, style = 'shop') {
   if (style === 'home' || style === 'bestseller') {
     return `<div class="suruchi-product">
       <div class="suruchi-product-img">
-        <a href="shop.html"><img class="img-main" src="${s.img}" alt="${s.name}" loading="lazy"><img class="img-hover" src="${s.img2 || s.img}" alt="${s.name}" loading="lazy"></a>
+        <a href="shop.html"><img src="${s.img}" alt="${s.name}" loading="lazy"></a>
         <span class="suruchi-product-badge">${badge}</span>
       </div>
       <div class="suruchi-product-info">
@@ -24,8 +24,7 @@ function sareeProductCard(s, style = 'shop') {
   }
   return `<div class="product-card" data-category="${s.category}" data-price="${s.price}" data-name="${s.name}">
     <div class="product-image">
-      <img class="img-main" src="${s.img}" alt="${s.name}" loading="lazy">
-      <img class="img-hover" src="${s.img2 || s.img}" alt="${s.name}" loading="lazy">
+      <img src="${s.img}" alt="${s.name}" loading="lazy">
       <span class="product-badge">${badge}</span>
       <div class="product-actions">
         <button class="product-action-btn wishlist-btn" type="button" aria-label="Wishlist"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
@@ -41,21 +40,21 @@ function sareeProductCard(s, style = 'shop') {
 }
 
 const ALL_SAREES = [
-  { name: 'Banarasi Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3599, old: 5999, img: `${IMG}/banarasi.webp`, img2: `${IMG}/paithani.webp` },
-  { name: 'Kanjivaram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 4999, old: 7999, img: `${IMG}/kanjivaram.webp`, img2: `${IMG}/kanchipuram.webp` },
-  { name: 'Cotton Block Print Saree', cat: 'Cotton Saree', category: 'cotton', price: 899, old: 1499, img: `${IMG}/cotton-block.webp`, img2: `${IMG}/kalamkari.webp` },
-  { name: 'Georgette Party Saree', cat: 'Party Wear', category: 'party', price: 1299, old: 2199, img: `${IMG}/georgette-party.webp`, img2: `${IMG}/net-party.webp` },
-  { name: 'Chiffon Embroidered Saree', cat: 'Designer Saree', category: 'party', price: 1599, old: 2499, img: `${IMG}/chiffon.webp`, img2: `${IMG}/organza.webp` },
-  { name: 'Tussar Silk Saree', cat: 'Silk Saree', category: 'silk', price: 2199, old: 3499, img: `${IMG}/tussar.webp`, img2: `${IMG}/mysore.webp` },
-  { name: 'Patola Silk Saree', cat: 'Silk Saree', category: 'silk', price: 5499, old: 8999, img: `${IMG}/patola.webp`, img2: `${IMG}/bandhani.webp` },
-  { name: 'Linen Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 1099, old: 1799, img: `${IMG}/linen-cotton.webp`, img2: `${IMG}/cotton-block.webp` },
-  { name: 'Organza Designer Saree', cat: 'Designer Saree', category: 'party', price: 1899, old: 2999, img: `${IMG}/organza.webp`, img2: `${IMG}/chiffon.webp` },
-  { name: 'Bandhani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 1799, old: 2799, img: `${IMG}/bandhani.webp`, img2: `${IMG}/patola.webp` },
-  { name: 'Paithani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 6499, old: 9999, img: `${IMG}/paithani.webp`, img2: `${IMG}/banarasi.webp`, badge: 'Hot' },
-  { name: 'Mysore Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3999, old: 5999, img: `${IMG}/mysore.webp`, img2: `${IMG}/tussar.webp` },
-  { name: 'Kalamkari Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 999, old: 1599, img: `${IMG}/kalamkari.webp`, img2: `${IMG}/linen-cotton.webp` },
-  { name: 'Net Party Wear Saree', cat: 'Party Wear', category: 'party', price: 1499, old: 2299, img: `${IMG}/net-party.webp`, img2: `${IMG}/georgette-party.webp` },
-  { name: 'Kanchipuram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 5999, old: 8999, img: `${IMG}/kanchipuram.webp`, img2: `${IMG}/kanjivaram.webp` },
+  { name: 'Banarasi Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3599, old: 5999, img: `${IMG}/banarasi.webp` },
+  { name: 'Kanjivaram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 4999, old: 7999, img: `${IMG}/kanjivaram.webp` },
+  { name: 'Cotton Block Print Saree', cat: 'Cotton Saree', category: 'cotton', price: 899, old: 1499, img: `${IMG}/cotton-block.webp` },
+  { name: 'Georgette Party Saree', cat: 'Party Wear', category: 'party', price: 1299, old: 2199, img: `${IMG}/georgette-party.webp` },
+  { name: 'Chiffon Embroidered Saree', cat: 'Designer Saree', category: 'party', price: 1599, old: 2499, img: `${IMG}/chiffon.webp` },
+  { name: 'Tussar Silk Saree', cat: 'Silk Saree', category: 'silk', price: 2199, old: 3499, img: `${IMG}/tussar.webp` },
+  { name: 'Patola Silk Saree', cat: 'Silk Saree', category: 'silk', price: 5499, old: 8999, img: `${IMG}/patola.webp` },
+  { name: 'Linen Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 1099, old: 1799, img: `${IMG}/linen-cotton.webp` },
+  { name: 'Organza Designer Saree', cat: 'Designer Saree', category: 'party', price: 1899, old: 2999, img: `${IMG}/organza.webp` },
+  { name: 'Bandhani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 1799, old: 2799, img: `${IMG}/bandhani.webp` },
+  { name: 'Paithani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 6499, old: 9999, img: `${IMG}/paithani.webp`, badge: 'Hot' },
+  { name: 'Mysore Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3999, old: 5999, img: `${IMG}/mysore.webp` },
+  { name: 'Kalamkari Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 999, old: 1599, img: `${IMG}/kalamkari.webp` },
+  { name: 'Net Party Wear Saree', cat: 'Party Wear', category: 'party', price: 1499, old: 2299, img: `${IMG}/net-party.webp` },
+  { name: 'Kanchipuram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 5999, old: 8999, img: `${IMG}/kanchipuram.webp` },
 ];
 
 function renderSarees() {
