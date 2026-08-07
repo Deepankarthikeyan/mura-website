@@ -3,310 +3,673 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suruchi — Handcrafted Indian Fashion & Home</title>
-  <meta name="description" content="Discover handcrafted Indian fashion, textiles, and home decor. Ethically sourced, beautifully made.">
+  <title>Suruchi — Fashion eCommerce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <style>:root { --font-body: 'Jost', sans-serif; --font-heading: 'Playfair Display', serif; }</style>
 </head>
 <body>
 
-  <div class="top-bar">
-    Free shipping on orders above ₹999 &nbsp;|&nbsp; <a href="shop.html">Shop New Arrivals</a>
+  <!-- Top Bar -->
+  <div class="suruchi-topbar">
+    <div class="suruchi-topbar-inner">
+      <div class="suruchi-topbar-left">
+        <span>Welcome to Suruchi Online Store</span>
+        <a href="#">Track Your Order</a>
+        <a href="mailto:hello@suruchi.com">hello@suruchi.com</a>
+      </div>
+      <div class="suruchi-topbar-right">
+        <a href="#">English ▾</a>
+        <a href="#">₹ INR ▾</a>
+      </div>
+    </div>
   </div>
 
-  <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">Suru<span>chi</span></a>
-
-      <nav class="nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="login.html" class="nav-link">Login</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="login.html" class="header-icon" aria-label="Account">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-        </a>
-        <a href="shop.html" class="header-icon" aria-label="Cart" style="position:relative">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-          <span class="cart-count" style="display:none">0</span>
-        </a>
-        <button class="mobile-toggle" aria-label="Menu">
-          <span></span><span></span><span></span>
+  <!-- Header -->
+  <header class="suruchi-header">
+    <div class="suruchi-header-main">
+      <button class="suruchi-mobile-toggle" aria-label="Menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="index.html" class="suruchi-logo">Suru<span>chi</span></a>
+      <form class="suruchi-search" action="shop.html">
+        <select><option>All Categories</option><option>Women</option><option>Men</option><option>Kids</option><option>Home</option></select>
+        <input type="text" placeholder="Keyword here...">
+        <button type="submit" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
+      </form>
+      <div class="suruchi-header-actions">
+        <a href="login.html" class="suruchi-header-action">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+          <span>My Account</span>
+        </a>
+        <a href="shop.html" class="suruchi-header-action">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+          <span>Wish List</span>
+          <span class="suruchi-badge">02</span>
+        </a>
+        <a href="shop.html" class="suruchi-header-action">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+          <span>My Cart</span>
+          <span class="suruchi-badge cart-count">02</span>
+        </a>
       </div>
     </div>
+    <nav class="suruchi-nav">
+      <div class="suruchi-nav-inner">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <nav class="mobile-nav">
-    <a href="index.html" class="nav-link active">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="shop.html" class="nav-link">Shop</a>
-    <a href="login.html" class="nav-link">Login</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-content">
-        <p class="hero-subtitle">Handcrafted with Love</p>
-        <h1 class="hero-title">Timeless Indian Craftsmanship</h1>
-        <p class="hero-text">Discover ethically sourced fashion, textiles, and home decor that celebrate India's rich artisanal heritage. Every piece tells a story.</p>
-        <div class="hero-buttons">
-          <a href="shop.html" class="btn btn-primary">Shop Collection</a>
-          <a href="about.html" class="btn btn-secondary">Our Story</a>
+  <main>
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero-slide slide-1">
+              <div class="hero-slide-content">
+                <p class="hero-slide-tag">New Collection</p>
+                <h2>The Great Fashion<br>Collection 2026</h2>
+                <p>Up To 40% Off Final Sale Items.<br>Caught in the Moment!</p>
+                <a href="shop.html" class="btn btn-primary">Show Collection →</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-slide slide-2">
+              <div class="hero-slide-content">
+                <p class="hero-slide-tag">New Collection</p>
+                <h2>The Great Fashion<br>Collection 2026</h2>
+                <p>Up To 40% Off Final Sale Items.<br>Caught in the Moment!</p>
+                <a href="shop.html" class="btn btn-primary">Show Collection →</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-slide slide-3">
+              <div class="hero-slide-content center" style="margin-left:auto;margin-right:0;max-width:600px;text-align:center">
+                <p class="hero-slide-tag">New Collection</p>
+                <h2>The Great Fashion<br>Collection 2026</h2>
+                <p>Up To 40% Off Final Sale Items.<br>Caught in the Moment!</p>
+                <a href="shop.html" class="btn btn-primary">Show Collection →</a>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80" alt="Indian ethnic fashion">
-    </div>
-  </section>
+    </section>
 
-  <!-- Categories -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-subtitle">Browse By</p>
-        <h2 class="section-title">Shop Categories</h2>
-        <p class="section-desc">Explore our curated collections of handcrafted products from artisans across India.</p>
-      </div>
-      <div class="categories-grid">
-        <a href="shop.html" class="category-card">
-          <img src="https://images.unsplash.com/photo-1583391733981-5c3ce0b1046f?w=400&q=80" alt="Women's Kurtas">
-          <div class="category-overlay">
-            <h3 class="category-name">Women</h3>
-            <span class="category-count">120+ Products</span>
+    <!-- Banner Grid -->
+    <section class="banner-section">
+      <div class="banner-grid">
+        <a href="shop.html" class="banner-card tall">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80" alt="Spring Collection">
+          <div class="banner-card-content">
+            <span class="banner-card-subtitle">17% Discount</span>
+            <h3>Spring Collection<br>Style To</h3>
+            <span class="banner-card-link">View Discounts →</span>
           </div>
         </a>
-        <a href="shop.html" class="category-card">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Men's Kurtas">
-          <div class="category-overlay">
-            <h3 class="category-name">Men</h3>
-            <span class="category-count">85+ Products</span>
+        <div class="banner-right">
+          <div class="banner-right-top">
+            <a href="shop.html" class="banner-card">
+              <img src="https://images.unsplash.com/photo-1483985988350-763728e1935b?w=500&q=80" alt="Shop Women">
+              <div class="banner-card-content">
+                <span class="banner-card-subtitle">Shop Women</span>
+                <h3>Up to 70% Off &<br>Free Shipping</h3>
+                <span class="banner-card-link">View Discounts →</span>
+              </div>
+            </a>
+            <a href="shop.html" class="banner-card">
+              <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&q=80" alt="Free Shipping">
+              <div class="banner-card-content">
+                <span class="banner-card-subtitle">Shop Women</span>
+                <h3>Free Shipping Over<br>Order ₹999</h3>
+                <span class="banner-card-link">View Discounts →</span>
+              </div>
+            </a>
           </div>
-        </a>
-        <a href="shop.html" class="category-card">
-          <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Kids Collection">
-          <div class="category-overlay">
-            <h3 class="category-name">Kids</h3>
-            <span class="category-count">60+ Products</span>
-          </div>
-        </a>
-        <a href="shop.html" class="category-card">
-          <img src="https://images.unsplash.com/photo-1616046229476-7fe2487fc0d4?w=400&q=80" alt="Home & Living">
-          <div class="category-overlay">
-            <h3 class="category-name">Home & Living</h3>
-            <span class="category-count">95+ Products</span>
-          </div>
-        </a>
+          <a href="shop.html" class="banner-card">
+            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=900&q=80" alt="Leather Bag">
+            <div class="banner-card-content">
+              <span class="banner-card-subtitle">25% Discount</span>
+              <h3>Handcrafted Silk<br>Bag Style</h3>
+              <span class="banner-card-link">View Discounts →</span>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Featured Products -->
-  <section class="section" style="background: var(--color-white)">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-subtitle">Handpicked For You</p>
-        <h2 class="section-title">Featured Products</h2>
-        <p class="section-desc">Our most loved pieces, crafted by skilled artisans using traditional techniques.</p>
-      </div>
-      <div class="products-grid">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1596558450255-7caa79f7ae57?w=400&q=80" alt="Block Print Kurta">
-            <span class="product-badge">Sale</span>
-            <div class="product-actions">
-              <button class="product-action-btn wishlist-btn" aria-label="Wishlist">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
-              </button>
-              <button class="product-action-btn add-to-cart" aria-label="Add to cart">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="product-info">
-            <p class="product-category">Kurta, Women</p>
-            <h3 class="product-name">Block Print Cotton Kurta</h3>
-            <div class="product-price">
-              <span class="price-current">₹1,119</span>
-              <span class="price-original">₹1,599</span>
-            </div>
-          </div>
+    <!-- New Products -->
+    <section class="products-section">
+      <div class="products-section-inner">
+        <div class="section-heading"><h2>New Products</h2></div>
+        <div class="product-tabs">
+          <button class="product-tab active" data-target="#tab-featured">Featured</button>
+          <button class="product-tab" data-target="#tab-trending">Trending</button>
+          <button class="product-tab" data-target="#tab-newarrival">New Arrival</button>
         </div>
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1572804013309-59a6b5cbcdbb?w=400&q=80" alt="Silk Saree">
-            <span class="product-badge">New</span>
-            <div class="product-actions">
-              <button class="product-action-btn wishlist-btn" aria-label="Wishlist">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
-              </button>
-              <button class="product-action-btn add-to-cart" aria-label="Add to cart">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="product-info">
-            <p class="product-category">Saree, Women</p>
-            <h3 class="product-name">Handwoven Silk Saree</h3>
-            <div class="product-price">
-              <span class="price-current">₹4,299</span>
-              <span class="price-original">₹5,999</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&q=80" alt="Men's Kurta">
-            <span class="product-badge">Sale</span>
-            <div class="product-actions">
-              <button class="product-action-btn wishlist-btn" aria-label="Wishlist">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
-              </button>
-              <button class="product-action-btn add-to-cart" aria-label="Add to cart">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="product-info">
-            <p class="product-category">Kurta, Men</p>
-            <h3 class="product-name">Linen Casual Kurta</h3>
-            <div class="product-price">
-              <span class="price-current">₹1,899</span>
-              <span class="price-original">₹2,499</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1616046229476-7fe2487fc0d4?w=400&q=80" alt="Cushion Covers">
-            <div class="product-actions">
-              <button class="product-action-btn wishlist-btn" aria-label="Wishlist">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
-              </button>
-              <button class="product-action-btn add-to-cart" aria-label="Add to cart">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="product-info">
-            <p class="product-category">Home, Living</p>
-            <h3 class="product-name">Embroidered Cushion Set</h3>
-            <div class="product-price">
-              <span class="price-current">₹899</span>
-              <span class="price-original">₹1,299</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:48px">
-        <a href="shop.html" class="btn btn-primary">View All Products</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Features -->
-  <section class="section">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635"/></svg>
+        <div id="tab-featured" class="tab-pane active">
+          <div class="suruchi-products-grid">
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1596558450255-7caa79f7ae57?w=400&q=80" alt="Oversize Cotton Dress"><img class="img-hover" src="https://images.unsplash.com/photo-1583391733981-5c3ce0b1046f?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Kurta, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Oversize Cotton Dress</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹1,119</span><span class="old">₹1,599</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1572804013309-59a6b5cbcdbb?w=400&q=80" alt="Boxy Denim Jacket"><img class="img-hover" src="https://images.unsplash.com/photo-1610030469667-0b763b8e2f9a?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Jacket, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Boxy Denim Jacket</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹1,299</span><span class="old">₹1,899</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80" alt="Quilted Shoulder Bag"><img class="img-hover" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Bag, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Quilted Shoulder Bag</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹899</span><span class="old">₹1,299</span></div>
+                <div class="suruchi-stars">★★★★☆</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80" alt="High Ankle Jeans"><img class="img-hover" src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Jeans, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">High Ankle Jeans</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹1,499</span><span class="old">₹2,199</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1566150905458-1bfaa84935f9?w=400&q=80" alt="Square Shoulder Bag"><img class="img-hover" src="https://images.unsplash.com/photo-1584917865442-de89d76dcf18?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Bag, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Square Shoulder Bag</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹999</span><span class="old">₹1,499</span></div>
+                <div class="suruchi-stars">★★★★☆</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="feature-title">Free Shipping</h3>
-          <p class="feature-text">On all orders above ₹999 across India</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>
+
+        <div id="tab-trending" class="tab-pane">
+          <div class="suruchi-products-grid">
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&q=80" alt="Light Denim Jacket"><img class="img-hover" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Jacket, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Light Denim Jacket</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹1,799</span><span class="old">₹2,499</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80" alt="Silk Saree"><img class="img-hover" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">New</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Saree, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Handwoven Silk Saree</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹4,299</span><span class="old">₹5,999</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Wool-blend Jacket"><img class="img-hover" src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Jacket, Men</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Wool-blend Jacket</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹2,499</span><span class="old">₹3,499</span></div>
+                <div class="suruchi-stars">★★★★☆</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1616046229476-7fe2487fc0d4?w=400&q=80" alt="Cushion Set"><img class="img-hover" src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&q=80" alt=""></a>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Home, Living</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Embroidered Cushion Set</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹899</span><span class="old">₹1,299</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="Kids Kurta"><img class="img-hover" src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">Sale</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Kurta, Kids</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Kids Cotton Kurta</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹599</span><span class="old">₹899</span></div>
+                <div class="suruchi-stars">★★★★☆</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="feature-title">Secure Payment</h3>
-          <p class="feature-text">100% secure payment processing</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3"/></svg>
+
+        <div id="tab-newarrival" class="tab-pane">
+          <div class="suruchi-products-grid">
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&q=80" alt="Organic Cotton"><img class="img-hover" src="https://images.unsplash.com/photo-1596558450255-7caa79f7ae57?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">New</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Kurta, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Organic Cotton Kurta</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹1,299</span><span class="old">₹1,899</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&q=80" alt="Western Denim"><img class="img-hover" src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">New</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Shirt, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Western Denim Shirt</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹1,099</span><span class="old">₹1,599</span></div>
+                <div class="suruchi-stars">★★★★☆</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80" alt="Mini Dress"><img class="img-hover" src="https://images.unsplash.com/photo-1572804013309-59a6b5cbcdbb?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">New</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Dress, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Smock Mini Dress</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹1,499</span><span class="old">₹2,199</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1584917865442-de89d76dcf18?w=400&q=80" alt="Block Print"><img class="img-hover" src="https://images.unsplash.com/photo-1610030469667-0b763b8e2f9a?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">New</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Kurta, Women</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Block Print Kurta</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹950</span><span class="old">₹1,499</span></div>
+                <div class="suruchi-stars">★★★★★</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
+            <div class="suruchi-product">
+              <div class="suruchi-product-img">
+                <a href="shop.html"><img class="img-main" src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80" alt="Casual Pant"><img class="img-hover" src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&q=80" alt=""></a>
+                <span class="suruchi-product-badge">New</span>
+              </div>
+              <div class="suruchi-product-info">
+                <span class="suruchi-product-cat">Pant, Men</span>
+                <h3 class="suruchi-product-name"><a href="shop.html">Casual Cotton Pant</a></h3>
+                <div class="suruchi-product-price"><span class="current">₹799</span><span class="old">₹1,199</span></div>
+                <div class="suruchi-stars">★★★★☆</div>
+                <div class="suruchi-product-actions">
+                  <button class="suruchi-action-btn primary add-to-cart">+ Add to cart</button>
+                  <button class="suruchi-action-btn wishlist-btn">♡</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="feature-title">Easy Returns</h3>
-          <p class="feature-text">Hassle-free 30-day return policy</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.15-6.24.43-.813.108-1.745.832-1.745 1.951v3.135"/></svg>
-          </div>
-          <h3 class="feature-title">24/7 Support</h3>
-          <p class="feature-text">Dedicated customer support team</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Promo Banner -->
-  <section class="promo-banner">
-    <div class="container">
-      <p class="section-subtitle" style="color: var(--color-secondary)">Limited Time Offer</p>
-      <h2 class="section-title">Up to 50% Off on Summer Collection</h2>
-      <p class="section-desc">Refresh your wardrobe with our handcrafted summer essentials. Shop now before they're gone!</p>
-      <a href="shop.html" class="btn btn-gold" style="margin-top:32px">Shop Sale</a>
-    </div>
-  </section>
+    <!-- Deals of the Day -->
+    <section class="deals-section">
+      <div class="deals-inner">
+        <div class="deals-content">
+          <p class="deals-tag">Hurry up and Get 25% Discount</p>
+          <h2>Deals Of The Day</h2>
+          <p>Don't miss out on our exclusive daily deals. Limited stock available on handcrafted ethnic wear and accessories.</p>
+          <div class="countdown">
+            <div class="countdown-item"><span class="num" id="cd-days">00</span><span class="label">Days</span></div>
+            <div class="countdown-item"><span class="num" id="cd-hours">00</span><span class="label">Hours</span></div>
+            <div class="countdown-item"><span class="num" id="cd-mins">00</span><span class="label">Mins</span></div>
+            <div class="countdown-item"><span class="num" id="cd-secs">00</span><span class="label">Secs</span></div>
+          </div>
+        </div>
+        <div class="deals-product">
+          <div class="deals-product-img">
+            <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Deal Product">
+          </div>
+          <div class="deals-product-info">
+            <span class="suruchi-product-badge" style="position:static;display:inline-block;margin-bottom:12px">25% Off</span>
+            <h3 class="suruchi-product-name" style="font-size:22px">Handwoven Silk Saree</h3>
+            <div class="suruchi-product-price" style="margin:12px 0"><span class="current" style="font-size:24px">₹3,599</span><span class="old">₹4,799</span></div>
+            <div class="suruchi-stars" style="margin-bottom:20px">★★★★★</div>
+            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Seller -->
+    <section class="bestseller-section">
+      <div class="section-heading"><h2>Our Best Seller</h2></div>
+      <div class="bestseller-grid">
+        <div class="suruchi-product">
+          <div class="suruchi-product-img">
+            <a href="shop.html"><img src="https://images.unsplash.com/photo-1596558450255-7caa79f7ae57?w=400&q=80" alt=""></a>
+            <span class="suruchi-product-badge">Sale</span>
+          </div>
+          <div class="suruchi-product-info">
+            <span class="suruchi-product-cat">Kurta, Women</span>
+            <h3 class="suruchi-product-name"><a href="shop.html">Oversize Cotton Dress</a></h3>
+            <div class="suruchi-product-price"><span class="current">₹1,119</span><span class="old">₹1,599</span></div>
+            <div class="suruchi-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="suruchi-product">
+          <div class="suruchi-product-img">
+            <a href="shop.html"><img src="https://images.unsplash.com/photo-1572804013309-59a6b5cbcdbb?w=400&q=80" alt=""></a>
+            <span class="suruchi-product-badge">Sale</span>
+          </div>
+          <div class="suruchi-product-info">
+            <span class="suruchi-product-cat">Jacket, Women</span>
+            <h3 class="suruchi-product-name"><a href="shop.html">Boxy Denim Jacket</a></h3>
+            <div class="suruchi-product-price"><span class="current">₹1,299</span><span class="old">₹1,899</span></div>
+            <div class="suruchi-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="suruchi-product">
+          <div class="suruchi-product-img">
+            <a href="shop.html"><img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&q=80" alt=""></a>
+            <span class="suruchi-product-badge">Sale</span>
+          </div>
+          <div class="suruchi-product-info">
+            <span class="suruchi-product-cat">Bag, Women</span>
+            <h3 class="suruchi-product-name"><a href="shop.html">Quilted Shoulder Bag</a></h3>
+            <div class="suruchi-product-price"><span class="current">₹899</span><span class="old">₹1,299</span></div>
+            <div class="suruchi-stars">★★★★☆</div>
+          </div>
+        </div>
+        <div class="suruchi-product">
+          <div class="suruchi-product-img">
+            <a href="shop.html"><img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&q=80" alt=""></a>
+            <span class="suruchi-product-badge">Sale</span>
+          </div>
+          <div class="suruchi-product-info">
+            <span class="suruchi-product-cat">Kurta, Men</span>
+            <h3 class="suruchi-product-name"><a href="shop.html">Linen Casual Kurta</a></h3>
+            <div class="suruchi-product-price"><span class="current">₹1,899</span><span class="old">₹2,499</span></div>
+            <div class="suruchi-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo Banners -->
+    <section class="promo-banners">
+      <div class="promo-banner bg-1">
+        <div>
+          <h3>Up to 25% Off<br>Order Now</h3>
+          <p>Pick Your Items</p>
+          <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+      </div>
+      <div class="promo-banner bg-2">
+        <div>
+          <h3>Up to 35% Off<br>Order Now</h3>
+          <p>Special offer</p>
+          <a href="shop.html" class="btn">Discover Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-section">
+      <div class="section-heading"><h2>Our Clients Say</h2></div>
+      <div class="testimonial-inner">
+        <div class="swiper testimonial-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"Absolutely love the quality of the kurtas! The hand-block prints are stunning and the fabric feels so premium. Will definitely order again."</p>
+                <p class="testimonial-author">Priya Sharma</p>
+                <p class="testimonial-role">Fashion</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"Suruchi has become my go-to for ethnic wear. Beautiful craftsmanship, ethical sourcing, and fast delivery. Highly recommended!"</p>
+                <p class="testimonial-author">Laura Johnson</p>
+                <p class="testimonial-role">Fashion</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">"The silk saree I purchased exceeded my expectations. Gorgeous colors and the packaging was elegant. Perfect for gifting too."</p>
+                <p class="testimonial-author">Richard Smith</p>
+                <p class="testimonial-role">Fashion</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Need Winter Collection?</h2>
+        <p>Explore our warm and stylish winter essentials crafted from premium wool and organic cotton. Shop the latest arrivals before they're gone.</p>
+        <a href="shop.html" class="btn btn-gold">Shop Now</a>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="blog-section">
+      <div class="section-heading"><h2>From The Blog</h2></div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1483985988350-763728e1935b?w=500&q=80" alt="Blog"></div>
+          <div class="blog-card-body">
+            <p class="blog-date">February 03, 2026</p>
+            <h3><a href="#">Fashion Trends In 2026: Styles, Colors, Accessories</a></h3>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=500&q=80" alt="Blog"></div>
+          <div class="blog-card-body">
+            <p class="blog-date">February 03, 2026</p>
+            <h3><a href="#">Meet the Artisans Behind Cool Ethical Label</a></h3>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80" alt="Blog"></div>
+          <div class="blog-card-body">
+            <p class="blog-date">February 03, 2026</p>
+            <h3><a href="#">How to Style Ethnic Wear for Modern Occasions</a></h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="newsletter-inner">
+        <h2>Join Our Newsletter</h2>
+        <p>Enter your email address to subscribe our notification of our new post & features by email.</p>
+        <form class="newsletter-form-large newsletter-form">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Service Bar -->
+    <section class="service-bar">
+      <div class="service-bar-grid">
+        <div class="service-item">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635"/></svg></div>
+          <div><h4>Shipping</h4><p>From handpicked sellers</p></div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg></div>
+          <div><h4>Payment</h4><p>Secure checkout</p></div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3"/></svg></div>
+          <div><h4>Return</h4><p>30-day easy returns</p></div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.15-6.24.43-.813.108-1.745.832-1.745 1.951v3.135"/></svg></div>
+          <div><h4>Support</h4><p>Dedicated help team</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">Suru<span>chi</span></a>
-          <p>Celebrating India's rich artisanal heritage through handcrafted fashion, textiles, and home decor. Ethically sourced, beautifully made.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-            <a href="#" aria-label="Twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Categories</h4>
-          <ul>
-            <li><a href="shop.html">Women</a></li>
-            <li><a href="shop.html">Men</a></li>
-            <li><a href="shop.html">Kids</a></li>
-            <li><a href="shop.html">Home & Living</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Newsletter</h4>
-          <p style="font-size:14px;margin-bottom:8px">Subscribe for exclusive offers and updates.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Your email" required>
-            <button type="submit">Join</button>
-          </form>
-        </div>
+  <footer class="suruchi-footer">
+    <div class="suruchi-footer-grid">
+      <div>
+        <a href="index.html" class="suruchi-logo" style="color:#fff;margin-bottom:16px;display:inline-block">Suru<span>chi</span></a>
+        <p style="font-size:14px;line-height:1.7;margin-bottom:16px">Celebrating India's rich artisanal heritage through handcrafted fashion, textiles, and home decor.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Suruchi. All rights reserved.</p>
-        <p>Handcrafted with love in India</p>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="shop.html">Women</a></li>
+          <li><a href="shop.html">Men</a></li>
+          <li><a href="shop.html">Kids</a></li>
+          <li><a href="shop.html">Home & Living</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@suruchi.com">hello@suruchi.com</a></li>
+          <li><a href="tel:+9118001034488">+91 1800 103 4488</a></li>
+          <li><a href="contact.html">New Delhi, India</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="suruchi-footer-bottom">
+      <p>&copy; 2026 Suruchi. All rights reserved. Handcrafted with love in India.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>
