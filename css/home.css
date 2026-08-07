@@ -1,19 +1,23 @@
-/* Suruchi Homepage — matches risingtheme demo layout with Fabindia colors */
+/* Suruchi Homepage — Fabindia official colors (#903233 maroon, #FFFDE9 cream) */
 
 :root {
-  --suruchi-primary: #7B2D26;
-  --suruchi-secondary: #C9A961;
-  --suruchi-dark: #1A1A1A;
-  --suruchi-gray: #606060;
-  --suruchi-border: #e7e7e7;
-  --suruchi-bg: #fcfcfc;
+  --suruchi-primary: #903233;
+  --suruchi-secondary: #903233;
+  --suruchi-primary-dark: #63393b;
+  --suruchi-accent: #96ad66;
+  --suruchi-dark: #2B2A29;
+  --suruchi-gray: #4a4a4a;
+  --suruchi-gray-light: #979797;
+  --suruchi-border: #ededed;
+  --suruchi-bg: #fafafa;
   --suruchi-white: #ffffff;
-  --suruchi-cream: #F8F4EF;
+  --suruchi-cream: #FFFDE9;
+  --suruchi-beige: #f3ece8;
 }
 
 /* ========== TOP BAR ========== */
 .suruchi-topbar {
-  background: var(--suruchi-secondary);
+  background: var(--suruchi-primary);
   padding: 10px 0;
   font-size: 14px;
 }
@@ -78,7 +82,7 @@
   flex-shrink: 0;
 }
 
-.suruchi-logo span { color: var(--suruchi-secondary); }
+.suruchi-logo span { color: var(--suruchi-primary); }
 
 .suruchi-search {
   display: flex;
@@ -110,7 +114,7 @@
 
 .suruchi-search button {
   padding: 0 20px;
-  background: var(--suruchi-secondary);
+  background: var(--suruchi-primary);
   color: var(--suruchi-white);
   border: none;
   cursor: pointer;
@@ -243,7 +247,7 @@
 
 .hero-slide-tag::before {
   content: '✦';
-  color: var(--suruchi-secondary);
+  color: var(--suruchi-cream);
 }
 
 .hero-slide h2 {
@@ -270,7 +274,7 @@
 .hero-slider .swiper-button-prev,
 .hero-slider .swiper-button-next {
   color: var(--suruchi-white);
-  background: rgba(123,45,38,0.7);
+  background: rgba(144,50,51,0.7);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -341,7 +345,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--suruchi-secondary);
+  color: var(--suruchi-cream);
   margin-bottom: 8px;
 }
 
@@ -513,7 +517,7 @@
 .suruchi-stars {
   display: flex;
   gap: 2px;
-  color: var(--suruchi-secondary);
+  color: var(--suruchi-primary);
   margin-bottom: 12px;
 }
 
@@ -560,7 +564,7 @@
 /* ========== DEALS OF THE DAY ========== */
 .deals-section {
   padding: 60px 20px;
-  background: var(--suruchi-cream);
+  background: var(--suruchi-beige);
 }
 
 .deals-inner {
@@ -577,7 +581,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--suruchi-secondary);
+  color: var(--suruchi-primary);
   margin-bottom: 12px;
 }
 
@@ -681,11 +685,11 @@
 }
 
 .promo-banner.bg-1 {
-  background: linear-gradient(135deg, var(--suruchi-primary) 0%, #5C1F1A 100%);
+  background: linear-gradient(135deg, var(--suruchi-primary) 0%, var(--suruchi-primary-dark) 100%);
 }
 
 .promo-banner.bg-2 {
-  background: linear-gradient(135deg, var(--suruchi-secondary) 0%, #A88B4A 100%);
+  background: linear-gradient(135deg, var(--suruchi-primary-dark) 0%, var(--suruchi-primary) 100%);
 }
 
 .promo-banner h3 {
@@ -715,7 +719,7 @@
 /* ========== TESTIMONIALS ========== */
 .testimonial-section {
   padding: 60px 20px;
-  background: var(--suruchi-cream);
+  background: var(--suruchi-beige);
 }
 
 .testimonial-inner {
@@ -766,7 +770,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(123,45,38,0.85);
+  background: rgba(144,50,51,0.88);
 }
 
 .cta-content {
@@ -831,7 +835,7 @@
 
 .blog-date {
   font-size: 13px;
-  color: var(--suruchi-secondary);
+  color: var(--suruchi-primary);
   font-weight: 500;
   margin-bottom: 8px;
 }
@@ -888,7 +892,7 @@
 
 .newsletter-form-large button {
   padding: 14px 28px;
-  background: var(--suruchi-secondary);
+  background: var(--suruchi-primary-dark);
   color: var(--suruchi-white);
   border: none;
   font-size: 13px;
@@ -899,10 +903,14 @@
   cursor: pointer;
 }
 
+.newsletter-form-large button:hover {
+  background: var(--suruchi-primary);
+}
+
 /* ========== SERVICE BAR ========== */
 .service-bar {
   padding: 40px 20px;
-  background: var(--suruchi-cream);
+  background: var(--suruchi-beige);
   border-top: 1px solid var(--suruchi-border);
 }
 
@@ -968,7 +976,7 @@
 
 .suruchi-footer ul li { margin-bottom: 10px; }
 .suruchi-footer a { font-size: 14px; }
-.suruchi-footer a:hover { color: var(--suruchi-secondary); }
+.suruchi-footer a:hover { color: var(--suruchi-cream); }
 
 .suruchi-footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);

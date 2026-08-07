@@ -1,26 +1,26 @@
 /* ============================================
-   Suruchi — Fabindia-inspired color palette
-   Maroon #7B2D26 | Cream #F8F4EF | Gold #C9A961
+   Suruchi — Fabindia official color palette
+   Maroon #903233 | Cream #FFFDE9 | Beige #f3ece8
    ============================================ */
 
 :root {
-  --color-primary: #7B2D26;
-  --color-primary-dark: #5C1F1A;
-  --color-primary-light: #9B3D35;
-  --color-secondary: #C9A961;
-  --color-secondary-dark: #A88B4A;
-  --color-cream: #F8F4EF;
-  --color-cream-dark: #EDE6DB;
+  --color-primary: #903233;
+  --color-primary-dark: #63393b;
+  --color-primary-light: #a84444;
+  --color-secondary: #903233;
+  --color-secondary-dark: #63393b;
+  --color-cream: #FFFDE9;
+  --color-cream-dark: #f3ece8;
   --color-white: #FFFFFF;
-  --color-text: #1A1A1A;
-  --color-text-muted: #6B6B6B;
-  --color-border: #E8E0D5;
-  --color-success: #2D6A4F;
+  --color-text: #2B2A29;
+  --color-text-muted: #4a4a4a;
+  --color-border: #ededed;
+  --color-success: #96ad66;
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Lato', 'Segoe UI', sans-serif;
-  --shadow-sm: 0 2px 8px rgba(123, 45, 38, 0.08);
-  --shadow-md: 0 4px 20px rgba(123, 45, 38, 0.12);
-  --shadow-lg: 0 8px 40px rgba(123, 45, 38, 0.16);
+  --shadow-sm: 0 2px 8px rgba(144, 50, 51, 0.08);
+  --shadow-md: 0 4px 20px rgba(144, 50, 51, 0.12);
+  --shadow-lg: 0 8px 40px rgba(144, 50, 51, 0.16);
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -93,7 +93,7 @@ input, textarea, select {
 }
 
 .top-bar a {
-  color: var(--color-secondary);
+  color: var(--suruchi-cream);
   text-decoration: underline;
 }
 
@@ -304,7 +304,7 @@ input, textarea, select {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: var(--color-secondary-dark);
+  color: var(--color-primary);
   margin-bottom: 16px;
   font-weight: 600;
 }
@@ -361,7 +361,7 @@ input, textarea, select {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--color-secondary-dark);
+  color: var(--color-primary);
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -408,7 +408,7 @@ input, textarea, select {
 .category-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(123, 45, 38, 0.85) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(144, 50, 51, 0.85) 0%, transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
