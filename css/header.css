@@ -53,19 +53,18 @@
   gap: 6px;
 }
 
-/* ========== STICKY HEADER (no JS) ========== */
+/* ========== STICKY HEADER (full nav stays visible) ========== */
 #site-header-mount {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
+  background: var(--suruchi-white);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .suruchi-header {
-  position: sticky;
-  top: var(--suruchi-header-sticky-top);
-  z-index: 1000;
   background: var(--suruchi-white);
-  border-bottom: 1px solid var(--suruchi-border);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-bottom: none;
 }
 
 .suruchi-header-main {
@@ -170,6 +169,12 @@
   background: var(--suruchi-white);
 }
 
+@media (min-width: 769px) {
+  .suruchi-nav {
+    display: block !important;
+  }
+}
+
 .suruchi-nav-inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -214,7 +219,7 @@
 }
 
 .shop-sidebar {
-  top: calc(140px + 24px) !important;
+  top: calc(172px + 24px) !important;
 }
 
 @media (max-width: 992px) {
