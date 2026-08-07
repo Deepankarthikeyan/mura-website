@@ -1,4 +1,4 @@
-/* Suruchi shared header — Fabindia colors, CSS-only sticky */
+/* Suruchi shared header — nav menu sticky on scroll */
 
 :root {
   --suruchi-primary: #903233;
@@ -8,10 +8,10 @@
   --suruchi-border: #ededed;
   --suruchi-white: #ffffff;
   --suruchi-cream: #FFFDE9;
-  --suruchi-header-sticky-top: 0;
+  --suruchi-nav-height: 52px;
 }
 
-/* ========== TOP BAR ========== */
+/* ========== TOP BAR (scrolls away) ========== */
 .suruchi-topbar {
   background: var(--suruchi-primary);
   padding: 10px 0;
@@ -53,18 +53,11 @@
   gap: 6px;
 }
 
-/* ========== STICKY HEADER (full nav stays visible) ========== */
+/* ========== HEADER MAIN (scrolls away) ========== */
 #site-header-mount {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative;
+  z-index: 999;
   background: var(--suruchi-white);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-}
-
-.suruchi-header {
-  background: var(--suruchi-white);
-  border-bottom: none;
 }
 
 .suruchi-header-main {
@@ -75,6 +68,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
+  border-bottom: 1px solid var(--suruchi-border);
 }
 
 .suruchi-logo {
@@ -163,16 +157,14 @@
   display: none;
 }
 
-/* ========== NAV MENU ========== */
+/* ========== NAV MENU (sticky — stays on scroll) ========== */
 .suruchi-nav {
-  border-top: 1px solid var(--suruchi-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--suruchi-border);
   background: var(--suruchi-white);
-}
-
-@media (min-width: 769px) {
-  .suruchi-nav {
-    display: block !important;
-  }
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .suruchi-nav-inner {
@@ -219,7 +211,13 @@
 }
 
 .shop-sidebar {
-  top: calc(172px + 24px) !important;
+  top: calc(var(--suruchi-nav-height) + 24px) !important;
+}
+
+@media (min-width: 769px) {
+  .suruchi-nav {
+    display: block !important;
+  }
 }
 
 @media (max-width: 992px) {
