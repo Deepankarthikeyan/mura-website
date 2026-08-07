@@ -615,12 +615,28 @@ input, textarea, select {
 }
 
 .breadcrumb__bg {
-  background: url('../images/banners/breadcrumb-bg.png') no-repeat center center;
-  background-size: cover;
+  position: relative;
   min-height: 130px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+}
+
+.breadcrumb__bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.breadcrumb__bg .container {
   position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 .breadcrumb__content {
@@ -636,6 +652,7 @@ input, textarea, select {
   font-weight: 600;
   color: var(--color-white);
   margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .breadcrumb__content--menu {

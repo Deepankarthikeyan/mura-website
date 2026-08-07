@@ -40,21 +40,21 @@ function sareeProductCard(s, style = 'shop') {
 }
 
 const ALL_SAREES = [
-  { name: 'Banarasi Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3599, old: 5999, img: `${IMG}/banarasi.jpg`, img2: `${IMG}/paithani.jpg` },
-  { name: 'Kanjivaram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 4999, old: 7999, img: `${IMG}/kanjivaram.jpg`, img2: `${IMG}/kanchipuram.jpg` },
-  { name: 'Cotton Block Print Saree', cat: 'Cotton Saree', category: 'cotton', price: 899, old: 1499, img: `${IMG}/cotton-block.jpg`, img2: `${IMG}/kalamkari.jpg` },
-  { name: 'Georgette Party Saree', cat: 'Party Wear', category: 'party', price: 1299, old: 2199, img: `${IMG}/georgette-party.jpg`, img2: `${IMG}/net-party.jpg` },
-  { name: 'Chiffon Embroidered Saree', cat: 'Designer Saree', category: 'party', price: 1599, old: 2499, img: `${IMG}/chiffon.jpg`, img2: `${IMG}/organza.jpg` },
-  { name: 'Tussar Silk Saree', cat: 'Silk Saree', category: 'silk', price: 2199, old: 3499, img: `${IMG}/tussar.jpg`, img2: `${IMG}/mysore.jpg` },
-  { name: 'Patola Silk Saree', cat: 'Silk Saree', category: 'silk', price: 5499, old: 8999, img: `${IMG}/patola.jpg`, img2: `${IMG}/bandhani.jpg` },
-  { name: 'Linen Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 1099, old: 1799, img: `${IMG}/linen-cotton.jpg`, img2: `${IMG}/cotton-block.jpg` },
-  { name: 'Organza Designer Saree', cat: 'Designer Saree', category: 'party', price: 1899, old: 2999, img: `${IMG}/organza.jpg`, img2: `${IMG}/chiffon.jpg` },
-  { name: 'Bandhani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 1799, old: 2799, img: `${IMG}/bandhani.jpg`, img2: `${IMG}/patola.jpg` },
-  { name: 'Paithani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 6499, old: 9999, img: `${IMG}/paithani.jpg`, img2: `${IMG}/banarasi.jpg`, badge: 'Hot' },
-  { name: 'Mysore Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3999, old: 5999, img: `${IMG}/mysore.jpg`, img2: `${IMG}/tussar.jpg` },
-  { name: 'Kalamkari Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 999, old: 1599, img: `${IMG}/kalamkari.jpg`, img2: `${IMG}/linen-cotton.jpg` },
-  { name: 'Net Party Wear Saree', cat: 'Party Wear', category: 'party', price: 1499, old: 2299, img: `${IMG}/net-party.jpg`, img2: `${IMG}/georgette-party.jpg` },
-  { name: 'Kanchipuram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 5999, old: 8999, img: `${IMG}/kanchipuram.jpg`, img2: `${IMG}/kanjivaram.jpg` },
+  { name: 'Banarasi Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3599, old: 5999, img: `${IMG}/banarasi.webp`, img2: `${IMG}/paithani.webp` },
+  { name: 'Kanjivaram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 4999, old: 7999, img: `${IMG}/kanjivaram.webp`, img2: `${IMG}/kanchipuram.webp` },
+  { name: 'Cotton Block Print Saree', cat: 'Cotton Saree', category: 'cotton', price: 899, old: 1499, img: `${IMG}/cotton-block.webp`, img2: `${IMG}/kalamkari.webp` },
+  { name: 'Georgette Party Saree', cat: 'Party Wear', category: 'party', price: 1299, old: 2199, img: `${IMG}/georgette-party.webp`, img2: `${IMG}/net-party.webp` },
+  { name: 'Chiffon Embroidered Saree', cat: 'Designer Saree', category: 'party', price: 1599, old: 2499, img: `${IMG}/chiffon.webp`, img2: `${IMG}/organza.webp` },
+  { name: 'Tussar Silk Saree', cat: 'Silk Saree', category: 'silk', price: 2199, old: 3499, img: `${IMG}/tussar.webp`, img2: `${IMG}/mysore.webp` },
+  { name: 'Patola Silk Saree', cat: 'Silk Saree', category: 'silk', price: 5499, old: 8999, img: `${IMG}/patola.webp`, img2: `${IMG}/bandhani.webp` },
+  { name: 'Linen Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 1099, old: 1799, img: `${IMG}/linen-cotton.webp`, img2: `${IMG}/cotton-block.webp` },
+  { name: 'Organza Designer Saree', cat: 'Designer Saree', category: 'party', price: 1899, old: 2999, img: `${IMG}/organza.webp`, img2: `${IMG}/chiffon.webp` },
+  { name: 'Bandhani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 1799, old: 2799, img: `${IMG}/bandhani.webp`, img2: `${IMG}/patola.webp` },
+  { name: 'Paithani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 6499, old: 9999, img: `${IMG}/paithani.webp`, img2: `${IMG}/banarasi.webp`, badge: 'Hot' },
+  { name: 'Mysore Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3999, old: 5999, img: `${IMG}/mysore.webp`, img2: `${IMG}/tussar.webp` },
+  { name: 'Kalamkari Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 999, old: 1599, img: `${IMG}/kalamkari.webp`, img2: `${IMG}/linen-cotton.webp` },
+  { name: 'Net Party Wear Saree', cat: 'Party Wear', category: 'party', price: 1499, old: 2299, img: `${IMG}/net-party.webp`, img2: `${IMG}/georgette-party.webp` },
+  { name: 'Kanchipuram Silk Saree', cat: 'Kanjivaram', category: 'kanjivaram', price: 5999, old: 8999, img: `${IMG}/kanchipuram.webp`, img2: `${IMG}/kanjivaram.webp` },
 ];
 
 function renderSarees() {

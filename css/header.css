@@ -1,4 +1,4 @@
-/* Suruchi shared header — Fabindia colors, sticky on scroll */
+/* Suruchi shared header — Fabindia colors, CSS-only sticky */
 
 :root {
   --suruchi-primary: #903233;
@@ -8,7 +8,7 @@
   --suruchi-border: #ededed;
   --suruchi-white: #ffffff;
   --suruchi-cream: #FFFDE9;
-  --suruchi-topbar-height: 40px;
+  --suruchi-header-sticky-top: 0;
 }
 
 /* ========== TOP BAR ========== */
@@ -16,7 +16,6 @@
   background: var(--suruchi-primary);
   padding: 10px 0;
   font-size: 14px;
-  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .suruchi-topbar-inner {
@@ -54,37 +53,19 @@
   gap: 6px;
 }
 
-body.header-scrolled .suruchi-topbar {
-  display: none;
-}
-
-body.header-scrolled {
-  --suruchi-header-offset: 130px;
-}
-
-body {
-  --suruchi-header-offset: 170px;
-}
-
-.shop-sidebar {
-  top: calc(var(--suruchi-header-offset) + 24px) !important;
-}
-
+/* ========== STICKY HEADER (no JS) ========== */
 #site-header-mount {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1000;
 }
 
-/* ========== STICKY HEADER ========== */
 .suruchi-header {
+  position: sticky;
+  top: var(--suruchi-header-sticky-top);
+  z-index: 1000;
   background: var(--suruchi-white);
   border-bottom: 1px solid var(--suruchi-border);
-  transition: box-shadow 0.3s ease;
-}
-
-.suruchi-header.is-stuck {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .suruchi-header-main {
@@ -211,7 +192,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--suruchi-dark);
-  transition: color 0.3s, background 0.3s;
 }
 
 .suruchi-nav a:hover,
@@ -233,6 +213,10 @@ body {
   display: block;
 }
 
+.shop-sidebar {
+  top: calc(140px + 24px) !important;
+}
+
 @media (max-width: 992px) {
   .suruchi-search { display: none; }
 }
@@ -245,4 +229,5 @@ body {
   .suruchi-mobile-toggle { display: block; }
   .suruchi-nav ul { flex-direction: column; }
   .suruchi-nav a { padding: 14px 20px; }
+  .shop-sidebar { top: calc(80px + 24px) !important; }
 }

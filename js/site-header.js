@@ -17,7 +17,7 @@
     .join('');
 
   mount.innerHTML = `
-    <div class="suruchi-topbar" id="suruchi-topbar">
+    <div class="suruchi-topbar">
       <div class="suruchi-topbar-inner">
         <div class="suruchi-topbar-left">
           <span>Big Saree Sale — Up to 70% Off</span>
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <header class="suruchi-header" id="suruchi-header">
+    <header class="suruchi-header">
       <div class="suruchi-header-main">
         <button class="suruchi-mobile-toggle" aria-label="Menu" type="button">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -74,8 +74,6 @@
     </header>
   `;
 
-  const header = document.getElementById('suruchi-header');
-  const topbar = document.getElementById('suruchi-topbar');
   const toggle = mount.querySelector('.suruchi-mobile-toggle');
   const nav = document.getElementById('suruchi-nav');
 
@@ -84,19 +82,4 @@
       nav.classList.toggle('open');
     });
   }
-
-  function onScroll() {
-    const y = window.scrollY || window.pageYOffset;
-    const threshold = topbar?.offsetHeight || 40;
-    if (y > threshold) {
-      document.body.classList.add('header-scrolled');
-      header?.classList.add('is-stuck');
-    } else {
-      document.body.classList.remove('header-scrolled');
-      header?.classList.remove('is-stuck');
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 })();
