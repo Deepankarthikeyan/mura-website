@@ -136,7 +136,8 @@ function initProductActions() {
         cartBadge.textContent = cartCount;
         cartBadge.style.display = 'flex';
       }
-      const name = btn.closest('.product-card')?.querySelector('.product-name')?.textContent || 'Item';
+      const card = btn.closest('.product-card, .suruchi-product');
+      const name = card?.querySelector('.product-name, .suruchi-product-name')?.textContent?.trim() || 'Saree';
       showNotification(`${name} added to cart!`);
     });
   });

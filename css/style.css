@@ -93,7 +93,7 @@ input, textarea, select {
 }
 
 .top-bar a {
-  color: var(--suruchi-cream);
+  color: var(--color-cream);
   text-decoration: underline;
 }
 
@@ -124,7 +124,7 @@ input, textarea, select {
 }
 
 .logo span {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .nav {
