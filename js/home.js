@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductTabs();
   initCountdown();
   initTestimonialSlider();
-  initMobileNav();
 });
 
 function initHeroSlider() {
@@ -72,11 +71,3 @@ function initTestimonialSlider() {
   });
 }
 
-function initMobileNav() {
-  const toggle = document.querySelector('.suruchi-mobile-toggle');
-  const nav = document.querySelector('.suruchi-nav');
-  if (!toggle || !nav) return;
-  toggle.addEventListener('click', () => {
-    nav.style.display = nav.style.display === 'block' ? '' : 'block';
-  });
-}

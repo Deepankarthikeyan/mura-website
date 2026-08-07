@@ -1,61 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-  initMobileNav();
   initShopFilters();
   initForms();
   initProductActions();
 });
 
-function initMobileNav() {
-  const toggle = document.querySelector('.mobile-toggle');
-  const mobileNav = document.querySelector('.mobile-nav');
-
-  if (!toggle || !mobileNav) return;
-
-  toggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('open');
-    toggle.classList.toggle('active');
-  });
-
-  mobileNav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      toggle.classList.remove('active');
-    });
-  });
-}
+window.addEventListener('sarees:ready', () => {
+  initShopFilters();
+});
 
 function initShopFilters() {
   const categoryLinks = document.querySelectorAll('.sidebar-list a[data-category]');
-  const products = document.querySelectorAll('.shop-products .product-card');
   const resultsText = document.querySelector('.shop-results');
+  const sortSelect = document.querySelector('.shop-sort select');
+  const filterBtn = document.querySelector('.price-filter-btn');
 
-  if (!categoryLinks.length || !products.length) return;
+  if (!categoryLinks.length) return;
 
-  categoryLinks.forEach(link => {
+  categoryLinks.forEach((link) => {
+    if (link.dataset.bound) return;
+    link.dataset.bound = 'true';
+
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      categoryLinks.forEach(l => l.classList.remove('active'));
+      categoryLinks.forEach((l) => l.classList.remove('active'));
       link.classList.add('active');
 
       const category = link.dataset.category;
+      const products = document.querySelectorAll('.shop-products .product-card');
       let visible = 0;
 
-      products.forEach(product => {
+      products.forEach((product) => {
         const match = category === 'all' || product.dataset.category === category;
         product.style.display = match ? '' : 'none';
         if (match) visible++;
       });
 
       if (resultsText) {
-        resultsText.textContent = `Showing ${visible} result${visible !== 1 ? 's' : ''}`;
+        resultsText.textContent = `Showing ${visible} saree${visible !== 1 ? 's' : ''} on sale`;
       }
     });
   });
 
-  const sortSelect = document.querySelector('.shop-sort select');
-  if (sortSelect) {
+  if (sortSelect && !sortSelect.dataset.bound) {
+    sortSelect.dataset.bound = 'true';
     sortSelect.addEventListener('change', () => {
       const grid = document.querySelector('.shop-products');
+      if (!grid) return;
       const cards = Array.from(grid.querySelectorAll('.product-card'));
 
       cards.sort((a, b) => {
@@ -70,18 +60,19 @@ function initShopFilters() {
         }
       });
 
-      cards.forEach(card => grid.appendChild(card));
+      cards.forEach((card) => grid.appendChild(card));
     });
   }
 
-  const filterBtn = document.querySelector('.price-filter-btn');
-  if (filterBtn) {
+  if (filterBtn && !filterBtn.dataset.bound) {
+    filterBtn.dataset.bound = 'true';
     filterBtn.addEventListener('click', () => {
       const min = parseFloat(document.getElementById('price-min')?.value) || 0;
       const max = parseFloat(document.getElementById('price-max')?.value) || Infinity;
+      const products = document.querySelectorAll('.shop-products .product-card');
       let visible = 0;
 
-      products.forEach(product => {
+      products.forEach((product) => {
         const price = parseFloat(product.dataset.price);
         const match = price >= min && price <= max;
         product.style.display = match ? '' : 'none';
@@ -89,7 +80,7 @@ function initShopFilters() {
       });
 
       if (resultsText) {
-        resultsText.textContent = `Showing ${visible} result${visible !== 1 ? 's' : ''}`;
+        resultsText.textContent = `Showing ${visible} saree${visible !== 1 ? 's' : ''} on sale`;
       }
     });
   }
@@ -114,8 +105,9 @@ function initForms() {
     });
   }
 
-  const newsletterForms = document.querySelectorAll('.newsletter-form');
-  newsletterForms.forEach(form => {
+  document.querySelectorAll('.newsletter-form').forEach((form) => {
+    if (form.dataset.bound) return;
+    form.dataset.bound = 'true';
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       showNotification('You have been subscribed to our newsletter!');
@@ -124,30 +116,33 @@ function initForms() {
   });
 }
 
-function initProductActions() {
-  let cartCount = 0;
-  const cartBadge = document.querySelector('.cart-count');
+let cartCount = 0;
 
-  document.querySelectorAll('.add-to-cart').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+function initProductActions() {
+  if (document.body.dataset.cartBound) return;
+  document.body.dataset.cartBound = 'true';
+
+  document.addEventListener('click', (e) => {
+    const cartBtn = e.target.closest('.add-to-cart');
+    if (cartBtn) {
       e.preventDefault();
       cartCount++;
-      if (cartBadge) {
-        cartBadge.textContent = cartCount;
-        cartBadge.style.display = 'flex';
-      }
-      const card = btn.closest('.product-card, .suruchi-product');
+      document.querySelectorAll('.cart-count').forEach((badge) => {
+        badge.textContent = cartCount;
+        badge.style.display = 'flex';
+      });
+      const card = cartBtn.closest('.product-card, .suruchi-product');
       const name = card?.querySelector('.product-name, .suruchi-product-name')?.textContent?.trim() || 'Saree';
       showNotification(`${name} added to cart!`);
-    });
-  });
+      return;
+    }
 
-  document.querySelectorAll('.wishlist-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    const wishBtn = e.target.closest('.wishlist-btn');
+    if (wishBtn) {
       e.preventDefault();
-      btn.classList.toggle('active');
-      showNotification(btn.classList.contains('active') ? 'Added to wishlist!' : 'Removed from wishlist.');
-    });
+      wishBtn.classList.toggle('active');
+      showNotification(wishBtn.classList.contains('active') ? 'Added to wishlist!' : 'Removed from wishlist.');
+    }
   });
 }
 

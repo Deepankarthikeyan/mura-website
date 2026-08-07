@@ -740,6 +740,10 @@ input, textarea, select {
   padding: 48px 0;
 }
 
+.shop-main {
+  min-width: 0;
+}
+
 .shop-sidebar {
   background: var(--color-white);
   border-radius: var(--radius-md);

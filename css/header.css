@@ -1,0 +1,248 @@
+/* Suruchi shared header — Fabindia colors, sticky on scroll */
+
+:root {
+  --suruchi-primary: #903233;
+  --suruchi-primary-dark: #63393b;
+  --suruchi-dark: #2B2A29;
+  --suruchi-gray: #4a4a4a;
+  --suruchi-border: #ededed;
+  --suruchi-white: #ffffff;
+  --suruchi-cream: #FFFDE9;
+  --suruchi-topbar-height: 40px;
+}
+
+/* ========== TOP BAR ========== */
+.suruchi-topbar {
+  background: var(--suruchi-primary);
+  padding: 10px 0;
+  font-size: 14px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.suruchi-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.suruchi-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--suruchi-white);
+}
+
+.suruchi-topbar-left a {
+  color: var(--suruchi-white);
+  opacity: 0.9;
+}
+
+.suruchi-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.suruchi-topbar-right a {
+  color: var(--suruchi-white);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+body.header-scrolled .suruchi-topbar {
+  display: none;
+}
+
+body.header-scrolled {
+  --suruchi-header-offset: 130px;
+}
+
+body {
+  --suruchi-header-offset: 170px;
+}
+
+.shop-sidebar {
+  top: calc(var(--suruchi-header-offset) + 24px) !important;
+}
+
+#site-header-mount {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ========== STICKY HEADER ========== */
+.suruchi-header {
+  background: var(--suruchi-white);
+  border-bottom: 1px solid var(--suruchi-border);
+  transition: box-shadow 0.3s ease;
+}
+
+.suruchi-header.is-stuck {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.suruchi-header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.suruchi-logo {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--suruchi-primary);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.suruchi-logo span { color: var(--suruchi-primary); }
+
+.suruchi-search {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+  border: 2px solid var(--suruchi-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.suruchi-search select {
+  padding: 12px 16px;
+  border: none;
+  border-right: 1px solid var(--suruchi-border);
+  background: var(--suruchi-cream);
+  font-size: 14px;
+  color: var(--suruchi-dark);
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.suruchi-search input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.suruchi-search button {
+  padding: 0 20px;
+  background: var(--suruchi-primary);
+  color: var(--suruchi-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.suruchi-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.suruchi-header-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--suruchi-dark);
+  position: relative;
+}
+
+.suruchi-header-action:hover { color: var(--suruchi-primary); }
+
+.suruchi-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--suruchi-primary);
+  color: var(--suruchi-white);
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suruchi-badge.cart-count {
+  display: none;
+}
+
+/* ========== NAV MENU ========== */
+.suruchi-nav {
+  border-top: 1px solid var(--suruchi-border);
+  background: var(--suruchi-white);
+}
+
+.suruchi-nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.suruchi-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0;
+}
+
+.suruchi-nav a {
+  display: block;
+  padding: 16px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--suruchi-dark);
+  transition: color 0.3s, background 0.3s;
+}
+
+.suruchi-nav a:hover,
+.suruchi-nav a.active {
+  color: var(--suruchi-primary);
+  background: var(--suruchi-cream);
+}
+
+.suruchi-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--suruchi-dark);
+}
+
+.suruchi-nav.open {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .suruchi-search { display: none; }
+}
+
+@media (max-width: 768px) {
+  .suruchi-topbar-right { display: none; }
+  .suruchi-header-action span { display: none; }
+  .suruchi-nav { display: none; }
+  .suruchi-nav.open { display: block; }
+  .suruchi-mobile-toggle { display: block; }
+  .suruchi-nav ul { flex-direction: column; }
+  .suruchi-nav a { padding: 14px 20px; }
+}
