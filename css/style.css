@@ -1,14 +1,14 @@
 /* ============================================
-   Suruchi — Fabindia official color palette
-   Maroon #903233 | Cream #FFFDE9 | Beige #f3ece8
+   MuRa@23 — brand color palette
+   Magenta #C2187A | Cream #FFFDE9 | Beige #f3ece8
    ============================================ */
 
 :root {
-  --color-primary: #903233;
-  --color-primary-dark: #63393b;
-  --color-primary-light: #a84444;
-  --color-secondary: #903233;
-  --color-secondary-dark: #63393b;
+  --color-primary: #C2187A;
+  --color-primary-dark: #9B125F;
+  --color-primary-light: #E91E8C;
+  --color-secondary: #C2187A;
+  --color-secondary-dark: #9B125F;
   --color-cream: #FFFDE9;
   --color-cream-dark: #f3ece8;
   --color-white: #FFFFFF;
@@ -18,9 +18,9 @@
   --color-success: #96ad66;
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Lato', 'Segoe UI', sans-serif;
-  --shadow-sm: 0 2px 8px rgba(144, 50, 51, 0.08);
-  --shadow-md: 0 4px 20px rgba(144, 50, 51, 0.12);
-  --shadow-lg: 0 8px 40px rgba(144, 50, 51, 0.16);
+  --shadow-sm: 0 2px 8px rgba(194, 24, 122, 0.08);
+  --shadow-md: 0 4px 20px rgba(194, 24, 122, 0.12);
+  --shadow-lg: 0 8px 40px rgba(194, 24, 122, 0.16);
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -125,6 +125,24 @@ input, textarea, select {
 
 .logo span {
   color: var(--color-primary);
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 16px;
+  line-height: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-logo img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-logo:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 
 .nav {
@@ -458,10 +476,22 @@ input, textarea, select {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: opacity 0.45s ease, transform 0.6s ease;
 }
 
-.product-card:hover .product-image img {
+.product-image .img-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.product-card:hover .product-image .img-main {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.product-card:hover .product-image .img-hover {
+  opacity: 1;
   transform: scale(1.05);
 }
 

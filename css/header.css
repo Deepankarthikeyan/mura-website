@@ -1,8 +1,8 @@
-/* Suruchi shared header — nav menu sticky on scroll */
+/* MuRa@23 shared header — nav menu sticky on scroll */
 
 :root {
-  --suruchi-primary: #903233;
-  --suruchi-primary-dark: #63393b;
+  --suruchi-primary: #C2187A;
+  --suruchi-primary-dark: #9B125F;
   --suruchi-dark: #2B2A29;
   --suruchi-gray: #4a4a4a;
   --suruchi-border: #ededed;
@@ -72,15 +72,24 @@
 }
 
 .suruchi-logo {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--suruchi-primary);
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
+  line-height: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.suruchi-logo span { color: var(--suruchi-primary); }
+.suruchi-logo:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.suruchi-logo img {
+  width: auto;
+  height: 64px;
+  max-width: 140px;
+  object-fit: contain;
+}
 
 .suruchi-search {
   display: flex;

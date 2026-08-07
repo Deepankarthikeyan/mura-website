@@ -1,9 +1,9 @@
-/* Suruchi Homepage — Fabindia official colors (#903233 maroon, #FFFDE9 cream) */
+/* MuRa@23 Homepage — brand colors (#C2187A magenta, #FFFDE9 cream) */
 
 :root {
-  --suruchi-primary: #903233;
-  --suruchi-secondary: #903233;
-  --suruchi-primary-dark: #63393b;
+  --suruchi-primary: #C2187A;
+  --suruchi-secondary: #C2187A;
+  --suruchi-primary-dark: #9B125F;
   --suruchi-accent: #96ad66;
   --suruchi-dark: #2B2A29;
   --suruchi-gray: #4a4a4a;
@@ -97,7 +97,7 @@
 .hero-slider .swiper-button-prev,
 .hero-slider .swiper-button-next {
   color: var(--suruchi-white);
-  background: rgba(144,50,51,0.7);
+  background: rgba(194, 24, 122, 0.75);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -274,7 +274,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.4s;
+  transition: opacity 0.45s ease, transform 0.6s ease;
+}
+
+.suruchi-product:hover .suruchi-product-img .img-main {
+  transform: scale(1.03);
+}
+
+.suruchi-product:hover .suruchi-product-img .img-hover {
+  transform: scale(1.05);
 }
 
 .suruchi-product-img .img-hover {
@@ -465,6 +473,11 @@
   height: 100%;
   object-fit: cover;
   min-height: 300px;
+  transition: transform 0.6s ease;
+}
+
+.deals-product:hover .deals-product-img img {
+  transform: scale(1.04);
 }
 
 .deals-product-info {
@@ -510,11 +523,11 @@
 }
 
 .promo-banner.bg-1 {
-  background: linear-gradient(135deg, rgba(144, 50, 51, 0.88) 0%, rgba(99, 57, 59, 0.88) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(194, 24, 122, 0.88) 0%, rgba(155, 18, 95, 0.88) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
 }
 
 .promo-banner.bg-2 {
-  background: linear-gradient(135deg, rgba(99, 57, 59, 0.88) 0%, rgba(144, 50, 51, 0.88) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(155, 18, 95, 0.88) 0%, rgba(194, 24, 122, 0.88) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
 }
 
 .promo-banner h3 {
@@ -825,15 +838,10 @@
   .deals-inner { grid-template-columns: 1fr; }
   .deals-product { grid-template-columns: 1fr; }
   .bestseller-grid { grid-template-columns: repeat(2, 1fr); }
-  .suruchi-search { display: none; }
   .suruchi-footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .suruchi-topbar-right { display: none; }
-  .suruchi-header-action span { display: none; }
-  .suruchi-nav { display: none; }
-  .suruchi-mobile-toggle { display: block; }
   .suruchi-products-grid,
   .bestseller-grid,
   .blog-grid { grid-template-columns: repeat(2, 1fr); }

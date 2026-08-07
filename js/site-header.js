@@ -22,7 +22,7 @@
         <div class="suruchi-topbar-left">
           <span>Big Saree Sale — Up to 70% Off</span>
           <a href="shop.html">Shop Sale Sarees</a>
-          <a href="mailto:hello@suruchi.com">hello@suruchi.com</a>
+          <a href="mailto:hello@mura23.com">hello@mura23.com</a>
         </div>
         <div class="suruchi-topbar-right">
           <a href="#">English ▾</a>
@@ -34,7 +34,9 @@
       <button class="suruchi-mobile-toggle" aria-label="Menu" type="button">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
-      <a href="index.html" class="suruchi-logo">Suru<span>chi</span></a>
+      <a href="index.html" class="suruchi-logo" aria-label="MuRa@23 Home">
+        <img src="images/mura23-logo.webp" alt="MuRa@23" width="120" height="72" decoding="async">
+      </a>
       <form class="suruchi-search" action="shop.html">
         <select aria-label="Category">
           <option>All Sarees</option>
