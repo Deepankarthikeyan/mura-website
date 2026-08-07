@@ -1,9 +1,9 @@
-/* MuRa@23 Homepage — brand colors (#C2187A magenta, #FFFDE9 cream) */
+/* MuRa@23 Homepage — Fabindia colors (#903233 maroon, #FFFDE9 cream) */
 
 :root {
-  --suruchi-primary: #C2187A;
-  --suruchi-secondary: #C2187A;
-  --suruchi-primary-dark: #9B125F;
+  --suruchi-primary: #903233;
+  --suruchi-secondary: #903233;
+  --suruchi-primary-dark: #63393b;
   --suruchi-accent: #96ad66;
   --suruchi-dark: #2B2A29;
   --suruchi-gray: #4a4a4a;
@@ -97,7 +97,7 @@
 .hero-slider .swiper-button-prev,
 .hero-slider .swiper-button-next {
   color: var(--suruchi-white);
-  background: rgba(194, 24, 122, 0.75);
+  background: rgba(144, 50, 51, 0.7);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -523,11 +523,11 @@
 }
 
 .promo-banner.bg-1 {
-  background: linear-gradient(135deg, rgba(194, 24, 122, 0.88) 0%, rgba(155, 18, 95, 0.88) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(144, 50, 51, 0.88) 0%, rgba(99, 57, 59, 0.88) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
 }
 
 .promo-banner.bg-2 {
-  background: linear-gradient(135deg, rgba(155, 18, 95, 0.88) 0%, rgba(194, 24, 122, 0.88) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(99, 57, 59, 0.88) 0%, rgba(144, 50, 51, 0.88) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
 }
 
 .promo-banner h3 {
