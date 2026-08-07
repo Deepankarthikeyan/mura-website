@@ -609,34 +609,120 @@ input, textarea, select {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ========== About Page ========== */
-.page-hero {
+/* ========== Suruchi-style Page Banner (Breadcrumb) ========== */
+.breadcrumb__section {
+  width: 100%;
+}
+
+.breadcrumb__bg {
+  background: url('../images/banners/breadcrumb-bg.png') no-repeat center center;
+  background-size: cover;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
   position: relative;
-  color: var(--color-white);
-  padding: 80px 0;
+}
+
+.breadcrumb__content {
+  position: relative;
+  width: 100%;
   text-align: center;
-  background: linear-gradient(135deg, rgba(144, 50, 51, 0.85) 0%, rgba(99, 57, 59, 0.9) 100%), url('../images/banners/page-hero.jpg') center/cover no-repeat;
+  padding: 32px 0;
 }
 
-.page-hero-title {
+.breadcrumb__content--title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 48px);
-  margin-bottom: 12px;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 16px;
 }
 
-.breadcrumb {
+.breadcrumb__content--menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-size: 14px;
-  opacity: 0.8;
+  list-style: none;
+  gap: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.breadcrumb a:hover {
-  color: var(--color-secondary);
+.breadcrumb__content--menu__items {
+  position: relative;
+  margin-right: 20px;
+  padding-right: 22px;
+  font-size: 15px;
+  line-height: 24px;
 }
 
+.breadcrumb__content--menu__items:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.breadcrumb__content--menu__items::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 18px;
+  background: var(--color-primary);
+  right: 0;
+  top: 4px;
+  border-radius: 5px;
+  transform: rotate(30deg);
+}
+
+.breadcrumb__content--menu__items:last-child::before {
+  display: none;
+}
+
+.breadcrumb__content--menu__items a,
+.breadcrumb__content--menu__items span {
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.breadcrumb__content--menu__items a:hover {
+  color: var(--color-cream);
+}
+
+@media (min-width: 480px) {
+  .breadcrumb__bg { min-height: 150px; }
+}
+
+@media (min-width: 576px) {
+  .breadcrumb__bg { min-height: 170px; }
+}
+
+@media (min-width: 768px) {
+  .breadcrumb__bg { min-height: 190px; }
+}
+
+@media (min-width: 992px) {
+  .breadcrumb__bg { min-height: 220px; }
+}
+
+@media (min-width: 1200px) {
+  .breadcrumb__bg { min-height: 270px; }
+}
+
+@media (min-width: 1600px) {
+  .breadcrumb__bg { min-height: 300px; }
+}
+
+/* Legacy aliases */
+.page-hero {
+  padding: 0;
+  background: none;
+}
+
+.page-hero-title,
+.breadcrumb {
+  display: none;
+}
+
+/* ========== About Page ========== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
