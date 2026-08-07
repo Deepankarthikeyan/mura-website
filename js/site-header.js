@@ -88,4 +88,15 @@
       nav.classList.toggle('open');
     });
   }
+
+  const headerMain = mount.querySelector('.suruchi-header-main');
+  if (headerMain && nav) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        nav.classList.toggle('is-scrolled', !entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(headerMain);
+  }
 })();

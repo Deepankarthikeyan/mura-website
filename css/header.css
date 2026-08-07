@@ -190,10 +190,26 @@
   align-items: center;
   flex-shrink: 0;
   line-height: 0;
-  transition: opacity 0.3s ease;
+  width: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, max-width 0.3s ease, width 0.3s ease;
+}
+
+.suruchi-nav.is-scrolled .suruchi-nav-logo {
+  width: auto;
+  max-width: 110px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .suruchi-nav-logo:hover {
+  opacity: 0.9;
+}
+
+.suruchi-nav.is-scrolled .suruchi-nav-logo:hover {
   opacity: 0.9;
 }
 
@@ -261,6 +277,17 @@
   .suruchi-nav { display: none; }
   .suruchi-nav.open { display: block; }
   .suruchi-mobile-toggle { display: block; }
+  .suruchi-nav.is-scrolled .suruchi-nav-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+    padding: 0 20px;
+  }
+
+  .suruchi-nav.is-scrolled .suruchi-nav-logo {
+    max-width: 100px;
+  }
+
   .suruchi-nav-inner {
     flex-direction: column;
     align-items: flex-start;
