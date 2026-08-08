@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initShopFilters();
+  initShopSidebar();
   initForms();
   initProductActions();
 });
@@ -7,6 +8,57 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('sarees:ready', () => {
   initShopFilters();
 });
+
+function initShopSidebar() {
+  const sidebar = document.querySelector('.shop-sidebar');
+  const toggle = document.querySelector('.shop-filter-toggle');
+  if (!sidebar || !toggle) return;
+
+  let overlay = document.querySelector('.shop-sidebar-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'shop-sidebar-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  const closeBtn = sidebar.querySelector('.shop-sidebar-close');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+    document.body.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (!toggle.dataset.bound) {
+    toggle.dataset.bound = 'true';
+    toggle.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) closeSidebar();
+      else openSidebar();
+    });
+  }
+
+  if (closeBtn && !closeBtn.dataset.bound) {
+    closeBtn.dataset.bound = 'true';
+    closeBtn.addEventListener('click', closeSidebar);
+  }
+
+  if (!overlay.dataset.bound) {
+    overlay.dataset.bound = 'true';
+    overlay.addEventListener('click', closeSidebar);
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 991) closeSidebar();
+  });
+}
 
 function initShopFilters() {
   const categoryLinks = document.querySelectorAll('.sidebar-list a[data-category]');

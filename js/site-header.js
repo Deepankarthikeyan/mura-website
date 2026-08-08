@@ -31,11 +31,11 @@
       </div>
     </div>
     <div class="suruchi-header-main">
-      <button class="suruchi-mobile-toggle" aria-label="Menu" type="button">
+      <button class="suruchi-mobile-toggle" aria-label="Open menu" aria-expanded="false" type="button">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
       <a href="index.html" class="suruchi-logo" aria-label="MuRa@23 Home">
-        <img src="images/mura23-logo.png" alt="MuRa@23" width="120" height="72" decoding="async">
+        <img src="images/mura-newlogo.png" alt="MuRa@23" width="120" height="80" decoding="async">
       </a>
       <form class="suruchi-search" action="shop.html">
         <select aria-label="Category">
@@ -66,31 +66,81 @@
           <span class="suruchi-badge cart-count">0</span>
         </a>
       </div>
+      <form class="suruchi-search suruchi-search--mobile" action="shop.html">
+        <select aria-label="Category">
+          <option>All Sarees</option>
+          <option>Silk Sarees</option>
+          <option>Cotton Sarees</option>
+          <option>Banarasi</option>
+          <option>Kanjivaram</option>
+          <option>Party Wear</option>
+        </select>
+        <input type="text" placeholder="Search sarees...">
+        <button type="submit" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+      </form>
     </div>
   `;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'nav-overlay';
+  overlay.setAttribute('aria-hidden', 'true');
 
   const nav = document.createElement('nav');
   nav.className = 'suruchi-nav';
   nav.id = 'suruchi-nav';
   nav.innerHTML = `
     <div class="suruchi-nav-inner">
+      <button class="suruchi-nav-close" aria-label="Close menu" type="button">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
       <a href="index.html" class="suruchi-nav-logo" aria-label="MuRa@23 Home">
-        <img src="images/mura23-logo.png" alt="MuRa@23" width="90" height="54" decoding="async">
+        <img src="images/mura-newlogo.png" alt="MuRa@23" width="90" height="60" decoding="async">
       </a>
       <ul>${navLinks}</ul>
     </div>`;
+
+  mount.insertAdjacentElement('afterend', overlay);
   mount.insertAdjacentElement('afterend', nav);
 
   const toggle = mount.querySelector('.suruchi-mobile-toggle');
+  const closeBtn = nav.querySelector('.suruchi-nav-close');
 
-  if (toggle && nav) {
+  function openMenu() {
+    nav.classList.add('open');
+    overlay.classList.add('open');
+    document.body.classList.add('menu-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    nav.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (toggle) {
     toggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
+      if (nav.classList.contains('open')) closeMenu();
+      else openMenu();
     });
   }
 
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+
   const headerMain = mount.querySelector('.suruchi-header-main');
-  if (headerMain && nav) {
+  if (headerMain) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         nav.classList.toggle('is-scrolled', !entry.isIntersecting);
