@@ -22,7 +22,7 @@
         <div class="suruchi-topbar-left">
           <span>Big Saree Sale — Up to 70% Off</span>
           <a href="shop.html">Shop Sale Sarees</a>
-          <a href="mailto:hello@mura23.com">hello@mura23.com</a>
+          <a href="mailto:murapodanur@gmail.com">murapodanur@gmail.com</a>
         </div>
         <div class="suruchi-topbar-right">
           <a href="#">English ▾</a>
