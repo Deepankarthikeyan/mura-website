@@ -1,0 +1,771 @@
+/* ============================================
+   MuRa@23 — Full responsive layout
+   Mobile · Tablet · Laptop · Desktop · Ultra-wide
+   ============================================ */
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* ========== LARGE DESKTOP (1600px+) ========== */
+@media (min-width: 1600px) {
+  .container,
+  .suruchi-topbar-inner,
+  .suruchi-header-main,
+  .suruchi-nav-inner,
+  .hero-slide-content,
+  .banner-section,
+  .products-section-inner,
+  .deals-inner,
+  .bestseller-grid,
+  .promo-banners,
+  .blog-grid,
+  .suruchi-footer-grid,
+  .suruchi-footer-bottom {
+    max-width: 1600px;
+  }
+
+  .hero-slide {
+    min-height: 620px;
+  }
+}
+
+/* ========== LAPTOP (1200px – 1399px) ========== */
+@media (max-width: 1399px) {
+  .suruchi-products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========== SMALL LAPTOP / TABLET LANDSCAPE (992px – 1199px) ========== */
+@media (max-width: 1199px) {
+  .suruchi-header-actions {
+    gap: 12px;
+  }
+
+  .suruchi-header-action {
+    font-size: 12px;
+  }
+
+  .suruchi-nav a {
+    padding: 14px 18px;
+    font-size: 13px;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+  }
+
+  .contact-form-card {
+    padding: 32px;
+  }
+}
+
+/* ========== TABLET (768px – 991px) ========== */
+@media (max-width: 991px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .suruchi-topbar-left span,
+  .suruchi-topbar-left a[href^="mailto"] {
+    display: none;
+  }
+
+  .suruchi-header-main {
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .suruchi-logo {
+    order: 1;
+  }
+
+  .suruchi-mobile-toggle {
+    order: 0;
+  }
+
+  .suruchi-header-actions {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .suruchi-search--mobile {
+    order: 3;
+    display: flex !important;
+    width: 100%;
+    max-width: none;
+    margin-top: 4px;
+  }
+
+  .suruchi-search--mobile select {
+    min-width: 110px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .suruchi-search--mobile input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .shop-layout {
+    padding: 32px 0;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .shop-filter-toggle {
+    display: flex;
+  }
+
+  .shop-sidebar {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    margin: 0;
+    border-radius: 0;
+    max-width: 320px;
+    height: 100vh;
+    overflow-y: auto;
+    top: 0 !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+    animation: slideInSidebar 0.3s ease;
+  }
+
+  .shop-sidebar.open {
+    display: block;
+  }
+
+  .shop-sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1099;
+  }
+
+  .shop-sidebar-overlay.open {
+    display: block;
+  }
+
+  .shop-sidebar-close {
+    display: flex;
+  }
+
+  .about-grid {
+    gap: 40px;
+  }
+
+  .auth-card {
+    padding: 40px 32px;
+  }
+
+  .map-container {
+    height: 320px;
+  }
+}
+
+/* ========== MOBILE (max 767px) ========== */
+@media (max-width: 767px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header */
+  .suruchi-topbar {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+
+  .suruchi-topbar-inner {
+    padding: 0 16px;
+  }
+
+  .suruchi-topbar-left {
+    gap: 12px;
+  }
+
+  .suruchi-topbar-left a[href="shop.html"] {
+    font-size: 12px;
+  }
+
+  .suruchi-header-main {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .suruchi-logo img {
+    height: 48px;
+    max-width: 110px;
+  }
+
+  .suruchi-header-actions {
+    gap: 8px;
+  }
+
+  .suruchi-header-action svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .suruchi-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1200;
+    background: var(--suruchi-white);
+    overflow-y: auto;
+    padding-top: 12px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    display: block !important;
+    visibility: hidden;
+  }
+
+  .suruchi-nav.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .suruchi-nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px;
+    min-height: 100%;
+  }
+
+  .suruchi-nav-logo {
+    width: auto !important;
+    max-width: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--suruchi-border);
+    margin-bottom: 8px;
+  }
+
+  .suruchi-nav-logo img {
+    height: 44px;
+  }
+
+  .suruchi-nav ul {
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .suruchi-nav a {
+    padding: 16px 12px;
+    font-size: 15px;
+    border-bottom: 1px solid var(--suruchi-border);
+  }
+
+  .suruchi-nav-close {
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 8px;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1199;
+  }
+
+  .nav-overlay.open {
+    display: block;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Hero */
+  .hero-slide {
+    min-height: 360px;
+  }
+
+  .hero-slide-content {
+    padding: 40px 20px;
+  }
+
+  .hero-slide h2 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .hero-slide p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-slider .swiper-button-prev,
+  .hero-slider .swiper-button-next {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-slider .swiper-button-prev::after,
+  .hero-slider .swiper-button-next::after {
+    font-size: 14px;
+  }
+
+  /* Banners */
+  .banner-section {
+    padding: 32px 16px;
+  }
+
+  .banner-card-content {
+    padding: 20px;
+  }
+
+  .banner-card h3 {
+    font-size: 20px;
+  }
+
+  /* Products */
+  .products-section {
+    padding: 40px 16px 48px;
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .product-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    scrollbar-width: none;
+    margin-bottom: 28px;
+  }
+
+  .product-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-tab {
+    padding: 10px 20px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .suruchi-product-actions {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Deals */
+  .deals-section {
+    padding: 40px 16px;
+  }
+
+  .deals-content h2 {
+    font-size: 28px;
+  }
+
+  .countdown {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .countdown-item {
+    padding: 12px 14px;
+    min-width: 60px;
+  }
+
+  .countdown-item .num {
+    font-size: 22px;
+  }
+
+  .deals-product-info {
+    padding: 24px 20px;
+  }
+
+  /* Promo / CTA / Blog */
+  .promo-banners {
+    padding: 0 16px 40px;
+  }
+
+  .promo-banner {
+    padding: 28px 24px;
+    min-height: 180px;
+  }
+
+  .promo-banner h3 {
+    font-size: 22px;
+  }
+
+  .cta-section {
+    padding: 48px 16px;
+  }
+
+  .cta-content h2 {
+    font-size: 28px;
+  }
+
+  .blog-section,
+  .bestseller-section,
+  .testimonial-section {
+    padding: 40px 16px;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+  }
+
+  /* Newsletter */
+  .newsletter-section {
+    padding: 40px 16px;
+  }
+
+  .newsletter-inner h2 {
+    font-size: 26px;
+  }
+
+  .newsletter-form-large {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .newsletter-form-large input {
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .newsletter-form-large button {
+    border-radius: 4px;
+    width: 100%;
+    padding: 14px;
+  }
+
+  /* Footer */
+  .suruchi-footer {
+    padding: 40px 16px 24px;
+  }
+
+  .footer,
+  .suruchi-footer-grid {
+    gap: 28px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  /* Shop */
+  .shop-layout {
+    padding: 24px 0;
+  }
+
+  .shop-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .shop-sort select {
+    width: 100%;
+  }
+
+  .shop-products {
+    gap: 16px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  /* About / Contact / Login */
+  .section {
+    padding: 40px 0;
+  }
+
+  .about-content h2 {
+    font-size: 26px;
+  }
+
+  .stats-grid {
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .stat-item {
+    padding: 16px 12px;
+  }
+
+  .contact-form-card {
+    padding: 24px 20px;
+  }
+
+  .contact-form-card h2 {
+    font-size: 24px;
+  }
+
+  .contact-info-card {
+    padding: 24px 20px;
+  }
+
+  .auth-section {
+    padding: 40px 16px;
+    min-height: auto;
+  }
+
+  .auth-card {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+
+  .auth-title {
+    font-size: 26px;
+  }
+
+  .social-login {
+    flex-direction: column;
+  }
+
+  .breadcrumb__content {
+    padding: 24px 0;
+  }
+
+  .breadcrumb__content--menu__items {
+    font-size: 13px;
+    margin-right: 14px;
+    padding-right: 16px;
+  }
+
+  .map-container {
+    height: 260px;
+    margin-top: 32px;
+  }
+
+  /* Notifications */
+  .notification {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    max-width: none !important;
+  }
+}
+
+/* ========== SMALL MOBILE (max 480px) ========== */
+@media (max-width: 480px) {
+  .suruchi-topbar-left span {
+    display: none;
+  }
+
+  .suruchi-logo img {
+    height: 42px;
+    max-width: 96px;
+  }
+
+  .hero-slide {
+    min-height: 300px;
+  }
+
+  .hero-slide-content {
+    padding: 32px 16px;
+  }
+
+  .banner-card.tall {
+    min-height: 220px;
+  }
+
+  .banner-card {
+    min-height: 160px;
+  }
+
+  .deals-content h2,
+  .cta-content h2 {
+    font-size: 24px;
+  }
+
+  .countdown-item {
+    padding: 10px 10px;
+    min-width: 54px;
+  }
+
+  .countdown-item .num {
+    font-size: 20px;
+  }
+
+  .countdown-item .label {
+    font-size: 10px;
+  }
+
+  .shop-filter-toggle {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+
+  .product-card .product-actions,
+  .suruchi-action-btn {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .footer-bottom,
+  .suruchi-footer-bottom {
+    font-size: 12px;
+    padding-top: 16px;
+  }
+}
+
+/* ========== EXTRA SMALL (max 360px) ========== */
+@media (max-width: 360px) {
+  .suruchi-header-actions {
+    gap: 4px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdown-item {
+    min-width: 48px;
+    padding: 8px 6px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== TOUCH DEVICES ========== */
+@media (hover: none), (pointer: coarse) {
+  .suruchi-product-actions {
+    opacity: 1;
+    transform: none;
+  }
+
+  .suruchi-header-action,
+  .suruchi-nav a,
+  .suruchi-mobile-toggle,
+  .shop-filter-toggle,
+  .btn {
+    min-height: 44px;
+  }
+
+  .suruchi-header-action {
+    min-width: 44px;
+    justify-content: center;
+  }
+}
+
+/* ========== SHOP FILTER TOGGLE (hidden on desktop) ========== */
+.shop-filter-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 0;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 992px) {
+  .shop-layout {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .shop-filter-toggle {
+    display: none !important;
+  }
+
+  .shop-sidebar {
+    display: block !important;
+    position: sticky !important;
+    inset: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-sm) !important;
+    animation: none !important;
+  }
+
+  .shop-sidebar-overlay {
+    display: none !important;
+  }
+}
+
+.shop-filter-toggle svg {
+  flex-shrink: 0;
+}
+
+.shop-sidebar-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  margin-bottom: 12px;
+  background: var(--color-cream);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.suruchi-nav-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--suruchi-cream);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--suruchi-dark);
+}
+
+.suruchi-search--mobile {
+  display: none;
+}
+
+@keyframes slideInSidebar {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}

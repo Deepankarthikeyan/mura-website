@@ -264,42 +264,23 @@
 @media (min-width: 769px) {
   .suruchi-nav {
     display: block !important;
+    position: sticky;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  .suruchi-nav-close,
+  .nav-overlay {
+    display: none !important;
   }
 }
 
 @media (max-width: 992px) {
-  .suruchi-search { display: none; }
+  .suruchi-search:not(.suruchi-search--mobile) { display: none; }
 }
 
 @media (max-width: 768px) {
   .suruchi-topbar-right { display: none; }
   .suruchi-header-action span { display: none; }
-  .suruchi-nav { display: none; }
-  .suruchi-nav.open { display: block; }
   .suruchi-mobile-toggle { display: block; }
-  .suruchi-nav.is-scrolled .suruchi-nav-inner {
-    flex-direction: row;
-    align-items: center;
-    gap: 28px;
-    padding: 0 20px;
-  }
-
-  .suruchi-nav.is-scrolled .suruchi-nav-logo {
-    max-width: 100px;
-  }
-
-  .suruchi-nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 20px;
-  }
-  .suruchi-nav-logo img { height: 40px; }
-  .suruchi-nav ul {
-    flex-direction: column;
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .suruchi-nav a { padding: 14px 20px; }
-  .shop-sidebar { top: calc(80px + 24px) !important; }
 }
