@@ -168,7 +168,8 @@
 
 /* ========== NAV MENU (sticky — stays on scroll) ========== */
 .suruchi-nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--suruchi-border);
   background: var(--suruchi-white);
@@ -214,14 +215,19 @@ body.nav-is-fixed .suruchi-nav-spacer {
   margin-right: 8px;
 }
 
-.suruchi-nav.is-scrolled .suruchi-nav-inner {
-  justify-content: flex-start;
-}
+  .suruchi-nav.is-scrolled .suruchi-nav-inner {
+    justify-content: flex-start;
+    min-height: var(--suruchi-nav-height);
+  }
 
-.suruchi-nav.is-scrolled .suruchi-nav ul {
-  justify-content: flex-start;
-  flex: 1;
-}
+  .suruchi-nav.is-scrolled .suruchi-nav ul {
+    justify-content: flex-start;
+    flex: 1;
+  }
+
+  .suruchi-nav.is-scrolled .suruchi-nav-logo img {
+    height: 40px;
+  }
 
 .suruchi-nav-logo:hover {
   opacity: 0.9;
@@ -282,23 +288,24 @@ body.nav-is-fixed .suruchi-nav-spacer {
 @media (min-width: 769px) {
   .suruchi-nav {
     display: block !important;
+    position: sticky;
+    top: 0;
     transform: none !important;
     visibility: visible !important;
   }
 
   .suruchi-nav.is-scrolled {
     position: fixed;
-    top: 0;
+    top: 0 !important;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 1100;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    inset: auto;
-    bottom: auto;
     height: auto;
     overflow: visible;
     padding-top: 0;
+    transform: none !important;
   }
 
   .suruchi-nav-close,
