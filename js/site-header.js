@@ -139,14 +139,41 @@
     if (window.innerWidth > 768) closeMenu();
   });
 
-  const headerMain = mount.querySelector('.suruchi-header-main');
-  if (headerMain) {
+  const spacer = document.createElement('div');
+  spacer.className = 'suruchi-nav-spacer';
+  spacer.setAttribute('aria-hidden', 'true');
+  nav.insertAdjacentElement('afterend', spacer);
+
+  function updateNavFixed(scrolled) {
+    nav.classList.toggle('is-scrolled', scrolled);
+    document.body.classList.toggle('nav-is-fixed', scrolled);
+
+    if (scrolled && window.innerWidth > 768) {
+      spacer.style.height = `${nav.offsetHeight}px`;
+    } else {
+      spacer.style.height = '0';
+    }
+  }
+
+  if (mount) {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        nav.classList.toggle('is-scrolled', !entry.isIntersecting);
+        updateNavFixed(!entry.isIntersecting);
       },
-      { threshold: 0 }
+      { threshold: 0, rootMargin: '0px' }
     );
-    observer.observe(headerMain);
+    observer.observe(mount);
   }
+
+  window.addEventListener('resize', () => {
+    if (document.body.classList.contains('nav-is-fixed')) {
+      updateNavFixed(true);
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    if (!mount) return;
+    const scrolled = mount.getBoundingClientRect().bottom <= 0;
+    updateNavFixed(scrolled);
+  }, { passive: true });
 })();
