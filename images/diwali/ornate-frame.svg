@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff59d"/>
+      <stop offset="45%" stop-color="#ffc107"/>
+      <stop offset="100%" stop-color="#ff8f00"/>
+    </linearGradient>
+    <g id="petal">
+      <path d="M200,188 L212,118 Q200,108 188,118 Z" fill="url(#og)" stroke="#f57f17" stroke-width="1"/>
+      <circle cx="200" cy="112" r="6" fill="#ffeb3b" opacity="0.9"/>
+    </g>
+  </defs>
+  <use href="#petal" transform="rotate(0 200 200)"/>
+  <use href="#petal" transform="rotate(22.5 200 200)"/>
+  <use href="#petal" transform="rotate(45 200 200)"/>
+  <use href="#petal" transform="rotate(67.5 200 200)"/>
+  <use href="#petal" transform="rotate(90 200 200)"/>
+  <use href="#petal" transform="rotate(112.5 200 200)"/>
+  <use href="#petal" transform="rotate(135 200 200)"/>
+  <use href="#petal" transform="rotate(157.5 200 200)"/>
+  <use href="#petal" transform="rotate(180 200 200)"/>
+  <use href="#petal" transform="rotate(202.5 200 200)"/>
+  <use href="#petal" transform="rotate(225 200 200)"/>
+  <use href="#petal" transform="rotate(247.5 200 200)"/>
+  <use href="#petal" transform="rotate(270 200 200)"/>
+  <use href="#petal" transform="rotate(292.5 200 200)"/>
+  <use href="#petal" transform="rotate(315 200 200)"/>
+  <use href="#petal" transform="rotate(337.5 200 200)"/>
+  <circle cx="200" cy="200" r="138" fill="none" stroke="#ffd54f" stroke-width="6" opacity="0.85"/>
+  <circle cx="200" cy="200" r="128" fill="none" stroke="#ff8f00" stroke-width="2" opacity="0.5"/>
+</svg>

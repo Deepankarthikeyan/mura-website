@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 140" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="flame" cx="50%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#fffde7"/>
+      <stop offset="50%" stop-color="#ffc107"/>
+      <stop offset="100%" stop-color="#ff6f00"/>
+    </radialGradient>
+  </defs>
+  <line x1="30" y1="0" x2="30" y2="18" stroke="#4a3728" stroke-width="2"/>
+  <circle cx="30" cy="22" r="3" fill="#5d4037"/>
+  <circle cx="30" cy="30" r="2.5" fill="#5d4037"/>
+  <circle cx="30" cy="38" r="2.5" fill="#5d4037"/>
+  <circle cx="30" cy="46" r="2.5" fill="#5d4037"/>
+  <circle cx="30" cy="54" r="2.5" fill="#5d4037"/>
+  <ellipse cx="30" cy="118" rx="22" ry="8" fill="rgba(0,0,0,0.15)"/>
+  <path d="M14 118 Q30 132 46 118 L42 100 Q30 88 18 100 Z" fill="#8d5524" stroke="#ffc107" stroke-width="1.5"/>
+  <path d="M20 100 Q30 94 40 100" fill="none" stroke="#ffc107" stroke-width="1.2" opacity="0.7"/>
+  <ellipse cx="30" cy="98" rx="10" ry="4" fill="#5d4037"/>
+  <path d="M26 96 Q30 72 34 96 Z" fill="url(#flame)"/>
+  <circle cx="30" cy="78" r="10" fill="rgba(255,193,7,0.25)"/>
+</svg>

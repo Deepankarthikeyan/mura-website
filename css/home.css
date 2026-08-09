@@ -1003,15 +1003,13 @@
 
 /* ========== CTA SECTION — DIWALI PROMO BANNER ========== */
 .cta-section--diwali {
-  padding: 72px 20px 64px;
+  padding: 72px 20px 80px;
   position: relative;
   overflow: hidden;
   text-align: center;
-  color: #fff;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(120, 40, 160, 0.45) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 100%, rgba(60, 10, 90, 0.6) 0%, transparent 50%),
-    linear-gradient(180deg, #1a0033 0%, #2d0052 35%, #3b0068 55%, #1f0038 100%);
+    radial-gradient(ellipse at 50% 0%, #fff9c4 0%, transparent 55%),
+    linear-gradient(180deg, #ffe082 0%, #ffca28 45%, #ffb300 100%);
 }
 
 .cta-section--diwali::before,
@@ -1019,259 +1017,301 @@
   display: none;
 }
 
-.diwali-banner-bg {
+.diwali-promo-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
 }
 
-.diwali-mandala {
+.diwali-corner-mandala {
   position: absolute;
-  border-radius: 50%;
-  opacity: 0.07;
+  width: 220px;
+  height: 220px;
+  opacity: 0.14;
   background:
-    radial-gradient(circle, transparent 30%, rgba(255, 193, 7, 0.4) 31%, transparent 32%),
-    repeating-conic-gradient(rgba(255, 193, 7, 0.5) 0deg 10deg, transparent 10deg 20deg);
-  -webkit-mask: radial-gradient(circle, #000 20%, transparent 70%);
-  mask: radial-gradient(circle, #000 20%, transparent 70%);
+    radial-gradient(circle, transparent 28%, #ff8f00 29%, transparent 30%),
+    repeating-conic-gradient(rgba(230, 81, 0, 0.55) 0deg 12deg, transparent 12deg 24deg);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(circle, #000 15%, transparent 72%);
+  mask: radial-gradient(circle, #000 15%, transparent 72%);
 }
 
-.diwali-mandala--1 { width: 280px; height: 280px; top: 8%; left: 5%; animation: mandala-spin 40s linear infinite; }
-.diwali-mandala--2 { width: 220px; height: 220px; bottom: 10%; right: 8%; animation: mandala-spin 50s linear infinite reverse; }
-.diwali-mandala--3 { width: 160px; height: 160px; top: 40%; right: 15%; opacity: 0.05; animation: mandala-spin 35s linear infinite; }
+.diwali-corner-mandala--tl { top: -40px; left: -40px; }
+.diwali-corner-mandala--br { bottom: -50px; right: -40px; }
+.diwali-corner-mandala--bl { bottom: -30px; left: -20px; width: 180px; height: 180px; opacity: 0.1; }
 
-@keyframes mandala-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.diwali-confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  background: linear-gradient(180deg, #ffd700, #ff8f00);
+  border-radius: 1px;
+  opacity: 0.7;
+  animation: confetti-float 4s ease-in-out infinite;
 }
 
-.diwali-hang-lamp {
+.diwali-confetti--1 { top: 18%; left: 22%; transform: rotate(25deg); }
+.diwali-confetti--2 { top: 28%; right: 20%; transform: rotate(-15deg); animation-delay: 0.8s; }
+.diwali-confetti--3 { top: 45%; left: 12%; transform: rotate(40deg); animation-delay: 1.5s; width: 6px; height: 10px; }
+.diwali-confetti--4 { top: 55%; right: 14%; transform: rotate(-30deg); animation-delay: 0.3s; }
+.diwali-confetti--5 { bottom: 22%; left: 28%; transform: rotate(12deg); animation-delay: 2s; }
+.diwali-confetti--6 { bottom: 30%; right: 26%; transform: rotate(-22deg); animation-delay: 1.2s; width: 6px; height: 10px; }
+
+@keyframes confetti-float {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 20deg)); opacity: 0.5; }
+  50% { transform: translateY(-8px) rotate(calc(var(--r, 20deg) + 15deg)); opacity: 0.9; }
+}
+
+.diwali-promo-stage {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.diwali-hang-diya {
   position: absolute;
   top: 0;
-  width: 64px;
+  width: 52px;
   height: auto;
-  opacity: 0.85;
-  animation: lamp-sway 4s ease-in-out infinite;
+  z-index: 3;
+  filter: drop-shadow(0 4px 12px rgba(255, 152, 0, 0.4));
+  animation: diya-sway 3.5s ease-in-out infinite;
 }
 
-.diwali-hang-lamp--left { left: 6%; }
-.diwali-hang-lamp--right { right: 6%; animation-delay: 1.5s; }
+.diwali-hang-diya--l1 { left: -8px; }
+.diwali-hang-diya--l2 { left: 48px; animation-delay: 0.6s; }
+.diwali-hang-diya--r1 { right: 48px; animation-delay: 0.3s; }
+.diwali-hang-diya--r2 { right: -8px; animation-delay: 0.9s; }
 
-@keyframes lamp-sway {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
+@keyframes diya-sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
 }
 
-.diwali-banner {
+.diwali-ornate-card {
   position: relative;
-  z-index: 2;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.cta-section--diwali .cta-festive-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #ffc107;
-  margin-bottom: 12px;
-  padding: 6px 18px;
-  border: 1px solid rgba(255, 193, 7, 0.45);
-  border-radius: 50px;
-  background: rgba(255, 193, 7, 0.08);
-}
-
-.diwali-prehead {
-  font-size: clamp(14px, 2.5vw, 18px);
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0 0 28px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-}
-
-.diwali-sale-badge {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 28px;
-}
-
-.diwali-sale-spinner {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  animation: sunburst-spin 8s linear infinite;
-  filter: drop-shadow(0 0 18px rgba(255, 193, 7, 0.55));
-}
-
-.diwali-sunburst-img {
   width: 100%;
-  height: 100%;
-  display: block;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 28px 0 0;
 }
 
-@keyframes sunburst-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.diwali-sale-ring {
+.diwali-frame-spinner {
   position: absolute;
-  border-radius: 50%;
   top: 50%;
   left: 50%;
+  width: 108%;
+  max-width: 460px;
+  aspect-ratio: 1;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 1;
+  animation: ornate-spin 12s linear infinite;
   pointer-events: none;
 }
 
-.diwali-sale-ring--gold {
-  width: 168px;
-  height: 168px;
-  border: 5px solid #ffc107;
-  background: transparent;
-  box-shadow: 0 0 20px rgba(255, 193, 7, 0.35);
+.diwali-ornate-frame-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 6px 20px rgba(255, 143, 0, 0.45));
 }
 
-.diwali-sale-ring--red {
-  width: 148px;
-  height: 148px;
-  border: 4px solid #c62828;
-  background: rgba(74, 0, 110, 0.92);
+@keyframes ornate-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-.diwali-sale-core {
+.diwali-frame-body {
+  position: relative;
+  z-index: 2;
+  margin: 36px 24px 24px;
+  padding: 36px 28px 32px;
+  background: linear-gradient(165deg, #ff7043 0%, #e64a19 45%, #d84315 100%);
+  border-radius: 28px;
+  border: 4px solid #ffd54f;
+  box-shadow:
+    0 12px 40px rgba(230, 81, 0, 0.35),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -4px 12px rgba(0, 0, 0, 0.15);
+  clip-path: polygon(
+    50% 0%, 62% 4%, 74% 0%, 84% 8%, 96% 8%, 100% 20%,
+    96% 32%, 100% 44%, 96% 56%, 100% 68%, 96% 80%,
+    100% 92%, 88% 100%, 76% 96%, 64% 100%, 50% 96%,
+    36% 100%, 24% 96%, 12% 100%, 0% 92%, 4% 80%,
+    0% 68%, 4% 56%, 0% 44%, 4% 32%, 0% 20%,
+    4% 8%, 16% 8%, 26% 0%, 38% 4%
+  );
+}
+
+.diwali-marigold {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, transparent 55%),
-    #3b0068;
+  top: 10%;
+  bottom: 16%;
+  width: 16px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  border: 2px solid rgba(255, 193, 7, 0.45);
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.35);
-  animation: sale-core-pulse 2.5s ease-in-out infinite;
+  pointer-events: none;
 }
 
-@keyframes sale-core-pulse {
-  0%, 100% { box-shadow: 0 0 24px rgba(0, 0, 0, 0.35); }
-  50% { box-shadow: 0 0 32px rgba(255, 193, 7, 0.35); }
+.diwali-marigold span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff176, #ff9800 60%, #e65100);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-.diwali-sale-core span {
-  font-size: 13px;
+.diwali-marigold--left { left: 12px; }
+.diwali-marigold--right { right: 12px; }
+
+.diwali-marigold span:nth-child(odd) { animation: garland-blink 2s ease-in-out infinite; }
+.diwali-marigold span:nth-child(even) { animation: garland-blink 2s ease-in-out infinite 0.6s; }
+
+@keyframes garland-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.diwali-promo-tag {
+  display: inline-block;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #ffc107;
-  line-height: 1.2;
-}
-
-.diwali-sale-core strong {
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #ffc107;
-  line-height: 1.2;
-  margin-top: 2px;
-}
-
-.diwali-banner-title {
-  font-family: var(--font-heading);
-  font-size: clamp(28px, 4.5vw, 40px);
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 8px;
-  color: #fff;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
-}
-
-.diwali-fore-art {
-  margin: 8px auto 20px;
-  max-width: 520px;
-  line-height: 0;
-  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35));
-}
-
-.diwali-fore-art img {
-  width: 100%;
-  height: auto;
-  max-height: 180px;
-  object-fit: contain;
-}
-
-.diwali-banner-desc {
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.88);
-  margin: 0 auto 20px;
-  max-width: 560px;
-}
-
-.diwali-banner-desc strong {
-  color: #ffc107;
-  font-weight: 700;
-}
-
-.diwali-offer-big {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(36px, 6vw, 52px);
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 8px;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
-}
-
-.diwali-offer-big span {
-  color: #ffc107;
-}
-
-.diwali-offer-sub {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(16px, 2.5vw, 20px);
-  font-style: italic;
-  color: #ffc107;
-  margin: 0 0 28px;
+  color: #fff9c4;
+  margin-bottom: 8px;
   opacity: 0.95;
 }
 
-.cta-section--diwali .btn-festive {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 36px;
+.diwali-promo-small {
+  font-family: var(--font-heading);
   font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: #1a0033;
-  background: linear-gradient(135deg, #ffd700 0%, #ffc107 50%, #ff9800 100%);
-  border: 2px solid #ffd700;
-  border-radius: 50px;
-  box-shadow: 0 4px 24px rgba(255, 193, 7, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-decoration: none;
+  color: #fff;
+  margin: 0 0 4px;
+  opacity: 0.95;
 }
 
-.cta-section--diwali .btn-festive:hover {
+.diwali-promo-title {
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 9vw, 56px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 6px;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.diwali-promo-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(36px, 8vw, 48px);
+  color: #fff;
+  margin: -4px 0 6px;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.diwali-promo-subtitle {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: #fff9c4;
+  margin: 0 0 18px;
+  letter-spacing: 1px;
+}
+
+.diwali-promo-ribbon {
+  display: inline-block;
+  padding: 10px 28px;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #ff8f00 0%, #e65100 100%);
+  color: #fff;
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.diwali-promo-ribbon::before,
+.diwali-promo-ribbon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 10px solid transparent;
+}
+
+.diwali-promo-ribbon::before {
+  left: -16px;
+  border-right-color: #e65100;
+}
+
+.diwali-promo-ribbon::after {
+  right: -16px;
+  border-left-color: #e65100;
+}
+
+.diwali-promo-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 auto 22px;
+  max-width: 320px;
+}
+
+.diwali-shop-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 32px;
+  background: linear-gradient(180deg, #bf360c 0%, #8d2608 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.diwali-shop-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(255, 193, 7, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  color: #1a0033;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.diwali-lotus {
+  position: absolute;
+  font-size: 22px;
+  color: #cf0653;
+  z-index: 4;
+  opacity: 0.85;
+  text-shadow: 0 0 8px rgba(207, 6, 83, 0.3);
+}
+
+.diwali-lotus--tl { top: 8%; left: 2%; color: #e91e63; }
+.diwali-lotus--tr { top: 10%; right: 2%; color: #9c27b0; }
+.diwali-lotus--bl { bottom: 6%; left: 4%; color: #ff9800; }
+.diwali-lotus--br { bottom: 8%; right: 4%; color: #cf0653; }
+
+@media (prefers-reduced-motion: reduce) {
+  .diwali-frame-spinner,
+  .diwali-hang-diya,
+  .diwali-confetti {
+    animation: none;
+  }
 }
 
 /* Legacy CTA fallback */
