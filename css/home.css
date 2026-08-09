@@ -1,10 +1,10 @@
-/* MuRa@23 Homepage — Fabindia colors (#903233 maroon, #FFFDE9 cream) */
+/* MuRa@23 Homepage — brand colors (#cf0653 pink, #FFFDE9 cream) */
 
 :root {
-  --suruchi-primary: #903233;
-  --suruchi-secondary: #903233;
-  --suruchi-primary-dark: #63393b;
-  --suruchi-accent: #96ad66;
+  --suruchi-primary: #cf0653;
+  --suruchi-secondary: #cf0653;
+  --suruchi-primary-dark: #a00543;
+  --suruchi-accent: #cf0653;
   --suruchi-dark: #2B2A29;
   --suruchi-gray: #4a4a4a;
   --suruchi-gray-light: #979797;
@@ -97,7 +97,7 @@
 .hero-slider .swiper-button-prev,
 .hero-slider .swiper-button-next {
   color: var(--suruchi-white);
-  background: rgba(144, 50, 51, 0.7);
+  background: rgba(207, 6, 83, 0.7);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -510,11 +510,11 @@
 }
 
 .promo-banner.bg-1 {
-  background: linear-gradient(135deg, rgba(144, 50, 51, 0.88) 0%, rgba(99, 57, 59, 0.88) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(207, 6, 83, 0.88) 0%, rgba(160, 5, 67, 0.88) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
 }
 
 .promo-banner.bg-2 {
-  background: linear-gradient(135deg, rgba(99, 57, 59, 0.88) 0%, rgba(144, 50, 51, 0.88) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(160, 5, 67, 0.88) 0%, rgba(207, 6, 83, 0.88) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
 }
 
 .promo-banner h3 {
@@ -585,7 +585,7 @@
 /* ========== CTA SECTION ========== */
 .cta-section {
   padding: 80px 20px;
-  background: linear-gradient(135deg, rgba(144, 50, 51, 0.82) 0%, rgba(99, 57, 59, 0.85) 100%), url('../images/banners/page-hero.jpg') center/cover;
+  background: linear-gradient(135deg, rgba(207, 6, 83, 0.82) 0%, rgba(160, 5, 67, 0.85) 100%), url('../images/banners/page-hero.jpg') center/cover;
   position: relative;
   text-align: center;
   color: var(--suruchi-white);
@@ -595,7 +595,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(144,50,51,0.88);
+  background: rgba(207, 6, 83, 0.88);
 }
 
 .cta-content {
