@@ -432,52 +432,52 @@ iframe {
 
   .cta-section,
   .cta-section--diwali {
-    padding: 64px 16px 72px;
+    padding: 48px 16px 40px;
   }
 
-  .cta-festive-tag {
-    font-size: 11px;
+  .diwali-hang-lamp {
+    width: 48px;
+    opacity: 0.6;
+  }
+
+  .diwali-hang-lamp--left { left: 2%; }
+  .diwali-hang-lamp--right { right: 2%; }
+
+  .diwali-sale-badge {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 20px;
+  }
+
+  .diwali-sale-ring--gold {
+    width: 134px;
+    height: 134px;
+  }
+
+  .diwali-sale-ring--red {
+    width: 118px;
+    height: 118px;
+  }
+
+  .diwali-sale-core {
+    width: 96px;
+    height: 96px;
+  }
+
+  .diwali-sale-core span { font-size: 11px; }
+  .diwali-sale-core strong { font-size: 12px; }
+
+  .diwali-fore-art img {
+    max-height: 130px;
+  }
+
+  .diwali-prehead {
     letter-spacing: 2px;
-    padding: 6px 14px;
+    margin-bottom: 20px;
   }
 
-  .cta-content h2 {
-    font-size: 28px;
-  }
-
-  .diwali-garland span {
-    width: 12px;
-    height: 18px;
-  }
-
-  .diwali-rangoli {
-    width: 60px;
-    height: 60px;
-    opacity: 0.35;
-  }
-
-  .diwali-cracker {
-    transform: scale(0.85);
-  }
-
-  .diwali-cracker--left {
-    left: 2%;
-    bottom: 12%;
-  }
-
-  .diwali-cracker--right {
-    right: 2%;
-    bottom: 14%;
-    transform: scale(0.85) scaleX(-1);
-  }
-
-  .diwali-diya-row {
-    gap: 10px;
-  }
-
-  .diwali-diya-row li {
-    width: 18px;
-    height: 12px;
+  .diwali-banner-desc {
+    font-size: 14px;
   }
 
   .blog-section,
