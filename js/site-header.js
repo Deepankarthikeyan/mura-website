@@ -35,7 +35,7 @@
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
       <a href="index.html" class="suruchi-logo" aria-label="MuRa@23 Home">
-        <img src="images/mura-newlogo.png" alt="MuRa@23" width="120" height="80" decoding="async">
+        <img src="images/mura-newlogo.png" alt="MuRa@23" width="129" height="80" decoding="async">
       </a>
       <form class="suruchi-search" action="shop.html">
         <select aria-label="Category">
@@ -96,7 +96,7 @@
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
       <a href="index.html" class="suruchi-nav-logo" aria-label="MuRa@23 Home">
-        <img src="images/mura-newlogo.png" alt="MuRa@23" width="90" height="60" decoding="async">
+        <img src="images/mura-newlogo.png" alt="MuRa@23" width="97" height="60" decoding="async">
       </a>
       <ul>${navLinks}</ul>
     </div>`;
