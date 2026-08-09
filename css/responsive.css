@@ -430,12 +430,23 @@ iframe {
     font-size: 22px;
   }
 
-  .cta-section {
-    padding: 48px 16px;
+  .cta-section,
+  .cta-section--diwali {
+    padding: 64px 16px;
+  }
+
+  .cta-festive-tag {
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 6px 14px;
   }
 
   .cta-content h2 {
     font-size: 28px;
+  }
+
+  .cta-diwali-lights {
+    gap: 20px;
   }
 
   .blog-section,
