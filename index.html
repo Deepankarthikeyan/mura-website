@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/diwali-banner.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="preload" as="image" href="images/banners/hero-1.jpg" fetchpriority="high">
   <style>:root { --font-body: 'Jost', sans-serif; --font-heading: 'Playfair Display', serif; }</style>
@@ -267,28 +268,107 @@
       </div>
     </section>
 
-    <!-- CTA — Diwali Festive -->
-    <section class="cta-section cta-section--diwali" aria-label="Diwali festive saree collection">
-      <div class="diwali-banner-wrap">
-        <picture>
-          <source srcset="images/diwali/diwali-sale-banner.webp" type="image/webp">
-          <img
-            src="images/diwali/diwali-sale-banner.png"
-            alt=""
-            class="diwali-banner-full"
-            width="1024"
-            height="1536"
-            loading="lazy"
-            decoding="async"
-            aria-hidden="true"
-          >
-        </picture>
-        <div class="diwali-banner-overlay">
-          <div class="diwali-banner-content">
-            <span class="diwali-banner-tag">✦ Diwali Festive Collection ✦</span>
-            <h2 class="diwali-banner-title">Celebrate Diwali in<br>Handcrafted Silk Sarees</h2>
-            <p class="diwali-banner-desc">Explore our exclusive festive saree sale — Banarasi, Kanjivaram, Paithani and more. Up to <strong>70% off</strong> on handcrafted silk sarees for the festival of lights.</p>
-            <a href="shop.html" class="diwali-banner-btn">Shop Festive Sarees →</a>
+    <!-- CTA — Diwali Sale Banner (HTML/CSS/JS) -->
+    <section class="diwali-sale-banner" id="diwali-sale-banner" aria-labelledby="diwali-sale-heading">
+      <!-- Background -->
+      <div class="dsb-bg" aria-hidden="true">
+        <div class="dsb-bg-gradient"></div>
+        <div class="dsb-bg-pattern"></div>
+      </div>
+
+      <!-- Corner mandala decorations -->
+      <div class="dsb-corner dsb-corner--tl" aria-hidden="true"></div>
+      <div class="dsb-corner dsb-corner--tr" aria-hidden="true"></div>
+      <div class="dsb-corner dsb-corner--bl" aria-hidden="true"></div>
+      <div class="dsb-corner dsb-corner--br" aria-hidden="true"></div>
+
+      <!-- Floating golden particles -->
+      <div class="dsb-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <!-- Hanging diyas, beads & ornaments from top -->
+      <div class="dsb-hangings" aria-hidden="true">
+        <div class="dsb-hang dsb-hang--1">
+          <span class="dsb-bead-string"></span>
+          <span class="dsb-bead"></span><span class="dsb-bead"></span>
+          <div class="dsb-diya"><span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span></div>
+        </div>
+        <div class="dsb-hang dsb-hang--2">
+          <span class="dsb-bead-string"></span>
+          <span class="dsb-bead"></span>
+          <div class="dsb-diya"><span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span></div>
+        </div>
+        <div class="dsb-hang dsb-hang--3">
+          <span class="dsb-bead-string"></span>
+          <div class="dsb-diya"><span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span></div>
+        </div>
+        <div class="dsb-hang dsb-hang--4">
+          <span class="dsb-bead-string"></span>
+          <div class="dsb-diya"><span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span></div>
+        </div>
+        <div class="dsb-hang dsb-hang--5">
+          <span class="dsb-bead-string"></span>
+          <span class="dsb-bead"></span>
+          <div class="dsb-diya"><span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span></div>
+        </div>
+        <div class="dsb-hang dsb-hang--6">
+          <span class="dsb-bead-string"></span>
+          <span class="dsb-bead"></span><span class="dsb-bead"></span>
+          <div class="dsb-diya"><span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span></div>
+        </div>
+        <div class="dsb-hang dsb-hang--7">
+          <span class="dsb-bead-string"></span>
+          <div class="dsb-diya"><span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span></div>
+        </div>
+      </div>
+
+      <!-- Side diyas -->
+      <div class="dsb-side-diyas" aria-hidden="true">
+        <div class="dsb-side-diya dsb-side-diya--1">
+          <div class="dsb-diya" style="width:44px;height:60px">
+            <span class="dsb-diya-glow"></span><span class="dsb-diya-flame" style="width:12px;height:18px;bottom:18px"></span>
+            <span class="dsb-diya-body" style="width:38px;height:22px"></span>
+          </div>
+        </div>
+        <div class="dsb-side-diya dsb-side-diya--2">
+          <div class="dsb-diya" style="width:40px;height:56px">
+            <span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span>
+          </div>
+        </div>
+        <div class="dsb-side-diya dsb-side-diya--3">
+          <div class="dsb-diya" style="width:44px;height:60px">
+            <span class="dsb-diya-glow"></span><span class="dsb-diya-flame" style="width:12px;height:18px;bottom:18px"></span>
+            <span class="dsb-diya-body" style="width:38px;height:22px"></span>
+          </div>
+        </div>
+        <div class="dsb-side-diya dsb-side-diya--4">
+          <div class="dsb-diya" style="width:40px;height:56px">
+            <span class="dsb-diya-glow"></span><span class="dsb-diya-flame"></span><span class="dsb-diya-body"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Central ornate sale panel -->
+      <div class="dsb-stage">
+        <div class="dsb-panel">
+          <div class="dsb-panel-frame">
+            <div class="dsb-panel-inner">
+              <div class="dsb-garland dsb-garland--l" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="dsb-garland dsb-garland--r" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <p class="dsb-text-happy">HAPPY</p>
+              <h2 class="dsb-text-diwali" id="diwali-sale-heading">DIWALI</h2>
+              <p class="dsb-text-sale">Sale</p>
+              <p class="dsb-text-offer">UPTO 70% OFF</p>
+              <a href="shop.html" class="dsb-cta" aria-label="Shop Diwali sale sarees now">SHOP NOW</a>
+            </div>
           </div>
         </div>
       </div>
@@ -402,5 +482,6 @@
   <script src="js/sarees.js"></script>
   <script src="js/main.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/diwali-banner.js"></script>
 </body>
 </html>

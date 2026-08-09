@@ -1,0 +1,553 @@
+/* ============================================================
+   DIWALI SALE BANNER — Premium animated promotional section
+   Desktop: 1920×650 | HTML/CSS/JS only (no background image)
+   ============================================================ */
+
+/* ---------- Base banner container ---------- */
+.diwali-sale-banner {
+  --dsb-gold: #ffc107;
+  --dsb-gold-light: #ffe082;
+  --dsb-orange: #ff7043;
+  --dsb-orange-deep: #e65100;
+  --dsb-red: #c62828;
+  --dsb-cream: #fff8e1;
+  --dsb-panel: #d84315;
+  --dsb-panel-dark: #bf360c;
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+  isolation: isolate;
+  opacity: 0;
+  animation: dsb-bg-fade 1s ease forwards;
+}
+
+.diwali-sale-banner.dsb-loaded {
+  opacity: 1;
+}
+
+@keyframes dsb-bg-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- Background: golden gradient + pattern ---------- */
+.dsb-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.dsb-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, #fff9c4 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(255, 152, 0, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 35% at 90% 85%, rgba(255, 193, 7, 0.2) 0%, transparent 45%),
+    linear-gradient(180deg, #ffe082 0%, #ffca28 40%, #ffb300 100%);
+}
+
+.dsb-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e65100' stroke-width='0.6'%3E%3Ccircle cx='40' cy='40' r='18'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3Cpath d='M40 8v12M40 60v12M8 40h12M60 40h12M16 16l8 8M56 56l8 8M64 16l-8 8M16 64l8-8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* ---------- Corner mandala decorations ---------- */
+.dsb-corner {
+  position: absolute;
+  width: clamp(100px, 14vw, 200px);
+  height: clamp(100px, 14vw, 200px);
+  z-index: 1;
+  opacity: 0.18;
+  background:
+    radial-gradient(circle, transparent 30%, rgba(230, 81, 0, 0.5) 31%, transparent 32%),
+    repeating-conic-gradient(rgba(191, 54, 12, 0.45) 0deg 10deg, transparent 10deg 20deg);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(circle, #000 20%, transparent 68%);
+  mask: radial-gradient(circle, #000 20%, transparent 68%);
+  pointer-events: none;
+}
+
+.dsb-corner--tl { top: -20px; left: -20px; }
+.dsb-corner--tr { top: -20px; right: -20px; transform: scaleX(-1); }
+.dsb-corner--bl { bottom: -20px; left: -20px; transform: scaleY(-1); }
+.dsb-corner--br { bottom: -20px; right: -20px; transform: scale(-1); }
+
+/* ---------- Floating golden particles ---------- */
+.dsb-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dsb-particles span {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffde7, var(--dsb-gold));
+  box-shadow: 0 0 6px rgba(255, 193, 7, 0.8);
+  opacity: 0;
+  animation: dsb-particle-rise 6s ease-in-out infinite;
+}
+
+.dsb-particles span:nth-child(1)  { left: 8%;  animation-delay: 0s;    width: 3px; height: 3px; }
+.dsb-particles span:nth-child(2)  { left: 15%; animation-delay: 1.2s; }
+.dsb-particles span:nth-child(3)  { left: 22%; animation-delay: 2.4s; width: 5px; height: 5px; }
+.dsb-particles span:nth-child(4)  { left: 31%; animation-delay: 0.6s; }
+.dsb-particles span:nth-child(5)  { left: 42%; animation-delay: 3s;   width: 3px; height: 3px; }
+.dsb-particles span:nth-child(6)  { left: 55%; animation-delay: 1.8s; }
+.dsb-particles span:nth-child(7)  { left: 63%; animation-delay: 4s;   width: 5px; height: 5px; }
+.dsb-particles span:nth-child(8)  { left: 71%; animation-delay: 0.3s; }
+.dsb-particles span:nth-child(9)  { left: 78%; animation-delay: 2s;   width: 3px; height: 3px; }
+.dsb-particles span:nth-child(10) { left: 86%; animation-delay: 3.5s; }
+.dsb-particles span:nth-child(11) { left: 92%; animation-delay: 1s;   width: 4px; height: 4px; }
+.dsb-particles span:nth-child(12) { left: 5%;  animation-delay: 4.5s; }
+.dsb-particles span:nth-child(13) { left: 48%; animation-delay: 2.8s; width: 3px; height: 3px; }
+.dsb-particles span:nth-child(14) { left: 36%; animation-delay: 5s;   }
+.dsb-particles span:nth-child(15) { left: 68%; animation-delay: 0.9s; width: 5px; height: 5px; }
+.dsb-particles span:nth-child(16) { left: 25%; animation-delay: 3.2s; }
+.dsb-particles span:nth-child(17) { left: 58%; animation-delay: 4.2s; width: 3px; height: 3px; }
+.dsb-particles span:nth-child(18) { left: 82%; animation-delay: 1.5s; }
+.dsb-particles span:nth-child(19) { left: 12%; animation-delay: 2.2s; width: 5px; height: 5px; }
+.dsb-particles span:nth-child(20) { left: 95%; animation-delay: 3.8s; }
+
+@keyframes dsb-particle-rise {
+  0%   { transform: translateY(0) scale(0.6); opacity: 0; }
+  15%  { opacity: 0.9; }
+  85%  { opacity: 0.4; }
+  100% { transform: translateY(-620px) scale(1.1); opacity: 0; }
+}
+
+/* ---------- Hanging decorations (diyas, beads, ornaments) ---------- */
+.dsb-hangings {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dsb-hang {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  opacity: 0;
+  animation: dsb-hang-in 0.8s ease forwards, dsb-swing 4s ease-in-out infinite;
+}
+
+.dsb-hang--1  { left: 6%;  animation-delay: 0.2s, 1s; }
+.dsb-hang--2  { left: 14%; animation-delay: 0.35s, 1.2s; }
+.dsb-hang--3  { left: 22%; animation-delay: 0.5s, 1.4s; }
+.dsb-hang--4  { right: 22%; animation-delay: 0.35s, 1.1s; }
+.dsb-hang--5  { right: 14%; animation-delay: 0.5s, 1.3s; }
+.dsb-hang--6  { right: 6%;  animation-delay: 0.2s, 1.5s; }
+.dsb-hang--7  { left: 50%; margin-left: -18px; animation-delay: 0.4s, 1s; animation-name: dsb-hang-in, dsb-swing-center; }
+
+@keyframes dsb-hang-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes dsb-swing {
+  0%, 100% { transform: rotate(-4deg); }
+  50%      { transform: rotate(4deg); }
+}
+
+@keyframes dsb-swing-center {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+
+.dsb-bead-string {
+  width: 2px;
+  height: 28px;
+  background: linear-gradient(180deg, #5d4037, #8d6e63);
+  border-radius: 1px;
+}
+
+.dsb-bead {
+  width: 5px;
+  height: 5px;
+  margin: 2px 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #8d6e63, #4e342e);
+}
+
+/* ---------- Diya component ---------- */
+.dsb-diya {
+  position: relative;
+  width: 36px;
+  height: 52px;
+  margin-top: 4px;
+}
+
+.dsb-diya-body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 32px;
+  height: 18px;
+  margin-left: -16px;
+  background: linear-gradient(180deg, #ff8f00 0%, #e65100 55%, #bf360c 100%);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.25);
+}
+
+.dsb-diya-body::before {
+  content: '';
+  position: absolute;
+  inset: 4px 6px auto;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 193, 7, 0.5);
+}
+
+.dsb-diya-flame {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  width: 10px;
+  height: 16px;
+  margin-left: -5px;
+  background: radial-gradient(ellipse at 50% 90%, #fffde7 0%, #ffc107 40%, #ff6f00 80%, transparent 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: dsb-flicker 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.9));
+}
+
+.dsb-diya-glow {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.45) 0%, transparent 70%);
+  animation: dsb-glow 1.2s ease-in-out infinite;
+}
+
+@keyframes dsb-flicker {
+  0%, 100% { transform: scaleX(1) scaleY(1) translateY(0); opacity: 1; }
+  25%  { transform: scaleX(0.88) scaleY(1.08) translateY(-1px); opacity: 0.92; }
+  50%  { transform: scaleX(1.05) scaleY(0.95) translateY(1px); opacity: 1; }
+  75%  { transform: scaleX(0.92) scaleY(1.04) translateY(-0.5px); opacity: 0.88; }
+}
+
+@keyframes dsb-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.85; transform: scale(1.15); }
+}
+
+/* Side diyas (larger, positioned on banner sides) */
+.dsb-side-diyas {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.dsb-side-diya {
+  position: absolute;
+  opacity: 0;
+  animation: dsb-diya-in 0.9s ease forwards;
+}
+
+.dsb-side-diya--1 { top: 18%; left: 4%;  animation-delay: 0.45s; }
+.dsb-side-diya--2 { top: 55%; left: 2%;  animation-delay: 0.6s; }
+.dsb-side-diya--2 .dsb-diya { transform: scale(0.85); }
+.dsb-side-diya--3 { top: 18%; right: 4%; animation-delay: 0.55s; }
+.dsb-side-diya--4 { top: 55%; right: 2%; animation-delay: 0.7s; }
+.dsb-side-diya--4 .dsb-diya { transform: scale(0.85); }
+
+.dsb-side-diya--2 { animation-name: dsb-diya-in; }
+.dsb-side-diya--4 { animation-name: dsb-diya-in; }
+
+@keyframes dsb-diya-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Remove duplicate rule below if present */
+.dsb-side-diya--2,
+.dsb-side-diya--4 {
+  /* scale applied on inner .dsb-diya */
+}
+
+/* ---------- Central stage & ornate panel ---------- */
+.dsb-stage {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px 20px;
+}
+
+.dsb-panel {
+  position: relative;
+  width: min(420px, 88vw);
+  opacity: 0;
+  transform: scale(0.88);
+  animation: dsb-panel-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+}
+
+@keyframes dsb-panel-in {
+  0%   { opacity: 0; transform: scale(0.88); filter: drop-shadow(0 0 0 transparent); }
+  70%  { filter: drop-shadow(0 0 40px rgba(255, 193, 7, 0.5)); }
+  100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 12px 40px rgba(191, 54, 12, 0.45)); }
+}
+
+/* Ornate outer gold frame (SVG mask shape via clip-path) */
+.dsb-panel-frame {
+  position: relative;
+  padding: 6px;
+  background: linear-gradient(145deg, #ffe082 0%, #ffc107 35%, #ff8f00 70%, #ffd54f 100%);
+  clip-path: polygon(
+    50% 0%, 62% 3%, 74% 0%, 84% 5%, 96% 5%, 100% 14%,
+    97% 26%, 100% 38%, 97% 50%, 100% 62%, 97% 74%,
+    100% 86%, 96% 95%, 84% 100%, 74% 97%, 62% 100%,
+    50% 97%, 38% 100%, 26% 97%, 16% 100%, 4% 95%,
+    0% 86%, 3% 74%, 0% 62%, 3% 50%, 0% 38%,
+    3% 26%, 0% 14%, 4% 5%, 16% 5%, 26% 0%, 38% 3%
+  );
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.35);
+}
+
+.dsb-panel-inner {
+  position: relative;
+  padding: 36px 28px 32px;
+  text-align: center;
+  background: linear-gradient(165deg, #ff7043 0%, var(--dsb-panel) 40%, var(--dsb-panel-dark) 100%);
+  clip-path: polygon(
+    50% 1%, 61% 4%, 73% 1%, 83% 6%, 95% 6%, 99% 15%,
+    96% 27%, 99% 39%, 96% 50%, 99% 61%, 96% 73%,
+    99% 85%, 95% 94%, 83% 99%, 73% 96%, 61% 99%,
+    50% 96%, 39% 99%, 27% 96%, 17% 99%, 5% 94%,
+    1% 85%, 4% 73%, 1% 61%, 4% 50%, 1% 39%,
+    4% 27%, 1% 15%, 5% 6%, 17% 6%, 27% 1%, 39% 4%
+  );
+}
+
+/* Marigold garlands inside panel */
+.dsb-garland {
+  position: absolute;
+  top: 12%;
+  bottom: 18%;
+  width: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.dsb-garland--l { left: 14px; }
+.dsb-garland--r { right: 14px; }
+
+.dsb-garland span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff176, #ff9800 55%, #e65100);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Text hierarchy & entrance animations ---------- */
+.dsb-text-happy {
+  font-family: var(--font-heading);
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--dsb-cream);
+  margin: 0 0 4px;
+  opacity: 0;
+  transform: translateY(12px);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  animation: dsb-text-in 0.8s ease 0.95s forwards, dsb-letter-space 1.2s ease 1.1s forwards;
+}
+
+.dsb-text-diwali {
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: #fff;
+  margin: 0 0 2px;
+  opacity: 0;
+  transform: translateY(16px);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 193, 7, 0.2);
+  animation: dsb-text-in 0.8s ease 1.15s forwards, dsb-text-glow 3s ease-in-out 1.8s infinite;
+}
+
+.dsb-text-sale {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(36px, 6vw, 56px);
+  color: #fff;
+  margin: -6px 0 14px;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(12px);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: dsb-text-in 0.8s ease 1.35s forwards;
+}
+
+.dsb-text-offer {
+  display: inline-block;
+  padding: 10px 28px;
+  margin: 0 0 20px;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: linear-gradient(180deg, #ff8f00 0%, #e65100 100%);
+  border: 2px solid rgba(255, 224, 130, 0.6);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: dsb-text-in 0.8s ease 1.55s forwards;
+}
+
+@keyframes dsb-text-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dsb-letter-space {
+  from { letter-spacing: 0.2em; }
+  to   { letter-spacing: 0.45em; }
+}
+
+@keyframes dsb-text-glow {
+  0%, 100% { text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 193, 7, 0.15); }
+  50%      { text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3), 0 0 35px rgba(255, 193, 7, 0.35); }
+}
+
+/* ---------- CTA button ---------- */
+.dsb-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 40px;
+  font-size: clamp(13px, 1.8vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(180deg, #bf360c 0%, #6d1b0a 100%);
+  border: 2px solid var(--dsb-gold);
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: dsb-text-in 0.8s ease 1.75s forwards, dsb-cta-pulse 2.5s ease-in-out 2.5s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.dsb-cta:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(255, 193, 7, 0.45), 0 4px 16px rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+
+@keyframes dsb-cta-pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); }
+  50%      { box-shadow: 0 6px 22px rgba(255, 193, 7, 0.35); }
+}
+
+/* ---------- Reduced motion ---------- */
+.diwali-sale-banner.dsb-reduced-motion,
+.diwali-sale-banner.dsb-reduced-motion * {
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.diwali-sale-banner.dsb-reduced-motion .dsb-hang--7 {
+  transform: translateX(-50%);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .diwali-sale-banner {
+    height: 560px;
+  }
+
+  .dsb-side-diya--2,
+  .dsb-side-diya--4 {
+    display: none;
+  }
+
+  .dsb-hang--2,
+  .dsb-hang--5 {
+    display: none;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .diwali-sale-banner {
+    height: 500px;
+  }
+
+  .dsb-corner {
+    opacity: 0.1;
+    width: 80px;
+    height: 80px;
+  }
+
+  .dsb-hang--3,
+  .dsb-hang--4 {
+    display: none;
+  }
+
+  .dsb-side-diyas {
+    display: none;
+  }
+
+  .dsb-panel-inner {
+    padding: 28px 20px 24px;
+  }
+
+  .dsb-garland {
+    display: none;
+  }
+
+  .dsb-text-offer {
+    padding: 8px 18px;
+    margin-bottom: 16px;
+  }
+
+  .dsb-cta {
+    padding: 12px 28px;
+  }
+
+  @keyframes dsb-particle-rise {
+    100% { transform: translateY(-480px) scale(1.1); }
+  }
+}
+
+@media (max-width: 400px) {
+  .diwali-sale-banner {
+    height: 460px;
+  }
+
+  .dsb-hang--1,
+  .dsb-hang--6 {
+    transform: scale(0.85);
+  }
+}

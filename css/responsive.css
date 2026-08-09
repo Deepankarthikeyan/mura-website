@@ -430,22 +430,6 @@ iframe {
     font-size: 22px;
   }
 
-  .cta-section--diwali {
-    padding: 0;
-  }
-
-  .diwali-banner-wrap {
-    max-width: 100%;
-  }
-
-  .diwali-banner-overlay {
-    top: 31%;
-    left: 17%;
-    width: 66%;
-    height: 42%;
-    padding: 6px 4px;
-  }
-
   .blog-section,
   .bestseller-section,
   .testimonial-section {
