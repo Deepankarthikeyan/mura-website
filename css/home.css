@@ -337,7 +337,7 @@
 .suruchi-stars {
   display: flex;
   gap: 2px;
-  color: var(--suruchi-primary);
+  color: #ffc107;
   margin-bottom: 12px;
 }
 
@@ -407,7 +407,7 @@
 
 .deals-content h2 {
   font-family: var(--font-heading);
-  font-size: 36px;
+  font-size: 50px;
   color: var(--suruchi-primary);
   margin-bottom: 16px;
 }
