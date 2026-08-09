@@ -66,14 +66,7 @@
 }
 
 .hero-slide-content::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  max-width: 560px;
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  z-index: -1;
+  display: none;
 }
 
 .hero-slide-content.center {
@@ -192,6 +185,20 @@
 
 .banner-card:hover img { transform: scale(1.05); }
 
+.banner-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.48);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.banner-card:hover::after {
+  background: rgba(0, 0, 0, 0.58);
+}
+
 .banner-card.tall { min-height: 420px; }
 
 .banner-card-content {
@@ -202,7 +209,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.1) 100%);
+  background: transparent;
   color: var(--suruchi-white);
 }
 
@@ -644,7 +651,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 0;
 }
 
@@ -654,11 +661,11 @@
 }
 
 .promo-banner.bg-1 {
-  background: linear-gradient(135deg, rgba(207, 6, 83, 0.92) 0%, rgba(160, 5, 67, 0.88) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(207, 6, 83, 0.75) 0%, rgba(160, 5, 67, 0.75) 100%), url('../images/banners/promo-1.jpg') center/cover no-repeat;
 }
 
 .promo-banner.bg-2 {
-  background: linear-gradient(135deg, rgba(160, 5, 67, 0.92) 0%, rgba(207, 6, 83, 0.88) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(160, 5, 67, 0.75) 0%, rgba(207, 6, 83, 0.75) 100%), url('../images/banners/promo-2.jpg') center/cover no-repeat;
 }
 
 .promo-banner h3 {

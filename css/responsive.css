@@ -312,6 +312,10 @@ iframe {
     padding: 40px 20px;
   }
 
+  .hero-slide-content::before {
+    max-width: none;
+  }
+
   .hero-slide h2 {
     font-size: clamp(28px, 8vw, 40px);
   }
