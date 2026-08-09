@@ -24,7 +24,6 @@
   --banner-overlay-hero: var(--banner-overlay-light);
   --banner-overlay-card: var(--banner-overlay-light);
   --banner-overlay-promo: var(--banner-overlay-light);
-  --banner-overlay-promo: var(--banner-overlay-light);
   --banner-overlay-card-tall:
     linear-gradient(
       to top,
@@ -33,13 +32,6 @@
       rgba(207, 6, 83, 0.22) 58%,
       rgba(207, 6, 83, 0.22) 100%
     );
-  --banner-overlay-promo: linear-gradient(
-    105deg,
-    rgba(207, 6, 83, 0.9) 0%,
-    rgba(160, 5, 67, 0.72) 38%,
-    rgba(43, 42, 41, 0.22) 68%,
-    rgba(43, 42, 41, 0.06) 100%
-  );
 }
 
 /* ========== HERO SLIDER ========== */
@@ -779,8 +771,212 @@
   background: var(--suruchi-primary);
 }
 
-/* ========== CTA SECTION ========== */
-.cta-section {
+/* ========== CTA SECTION — DIWALI FESTIVE ========== */
+.cta-section--diwali {
+  padding: 90px 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: var(--suruchi-white);
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(255, 193, 7, 0.18) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 152, 0, 0.15) 0%, transparent 40%),
+    linear-gradient(135deg, #1a0533 0%, #4a0e2e 35%, #7a1040 65%, #cf0653 100%);
+  border-top: 3px solid rgba(255, 193, 7, 0.45);
+  border-bottom: 3px solid rgba(255, 193, 7, 0.45);
+}
+
+.cta-section--diwali::before,
+.cta-section--diwali::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(48px, 8vw, 96px);
+  color: rgba(255, 193, 7, 0.12);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-section--diwali::before { left: 4%; }
+.cta-section--diwali::after { right: 4%; }
+
+.cta-diwali-pattern {
+  position: absolute;
+  inset: 12px;
+  border: 2px dashed rgba(255, 193, 7, 0.35);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-diwali-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 8px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 12px,
+      rgba(255, 193, 7, 0.04) 12px,
+      rgba(255, 193, 7, 0.04) 14px
+    );
+}
+
+.cta-diwali-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  animation: ctaGlowPulse 4s ease-in-out infinite alternate;
+}
+
+.cta-diwali-glow--left {
+  left: -80px;
+  bottom: -60px;
+  background: rgba(255, 152, 0, 0.35);
+}
+
+.cta-diwali-glow--right {
+  right: -80px;
+  top: -60px;
+  background: rgba(255, 193, 7, 0.3);
+  animation-delay: 2s;
+}
+
+.cta-diwali-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: clamp(24px, 5vw, 56px);
+  list-style: none;
+  padding: 14px 20px 0;
+  margin: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-diwali-lights li {
+  width: 14px;
+  height: 20px;
+  background: linear-gradient(to bottom, #ffc107 0%, #ff9800 55%, #e65100 100%);
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.8), 0 0 24px rgba(255, 152, 0, 0.4);
+  animation: ctaDiyaFlicker 2.5s ease-in-out infinite;
+}
+
+.cta-diwali-lights li:nth-child(2) { animation-delay: 0.3s; }
+.cta-diwali-lights li:nth-child(3) { animation-delay: 0.6s; }
+.cta-diwali-lights li:nth-child(4) { animation-delay: 0.9s; }
+.cta-diwali-lights li:nth-child(5) { animation-delay: 0.6s; }
+.cta-diwali-lights li:nth-child(6) { animation-delay: 0.3s; }
+.cta-diwali-lights li:nth-child(7) { animation-delay: 0s; }
+
+.cta-diwali-lights li::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 8px;
+  margin: -10px auto 0;
+  background: linear-gradient(to top, #ffeb3b, #ff9800);
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ffeb3b, 0 0 14px rgba(255, 235, 59, 0.6);
+  animation: ctaFlame 1.5s ease-in-out infinite alternate;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.cta-festive-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffc107;
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 193, 7, 0.5);
+  border-radius: 50px;
+  background: rgba(255, 193, 7, 0.1);
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+}
+
+.cta-content h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cta-content p {
+  font-size: 16px;
+  margin-bottom: 32px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.cta-content p strong {
+  color: #ffc107;
+  font-weight: 700;
+}
+
+.btn-festive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a0533;
+  background: linear-gradient(135deg, #ffd700 0%, #ffc107 50%, #ff9800 100%);
+  border: 2px solid #ffd700;
+  border-radius: 50px;
+  box-shadow: 0 4px 24px rgba(255, 193, 7, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-festive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 193, 7, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #1a0533;
+}
+
+@keyframes ctaGlowPulse {
+  from { opacity: 0.6; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes ctaDiyaFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+@keyframes ctaFlame {
+  from { transform: scaleY(1); opacity: 1; }
+  to { transform: scaleY(1.15); opacity: 0.85; }
+}
+
+/* Legacy CTA fallback */
+.cta-section:not(.cta-section--diwali) {
   padding: 80px 20px;
   background: linear-gradient(135deg, rgba(207, 6, 83, 0.82) 0%, rgba(160, 5, 67, 0.85) 100%), url('../images/banners/page-hero.jpg') center/cover;
   position: relative;
@@ -788,31 +984,11 @@
   color: var(--suruchi-white);
 }
 
-.cta-section::before {
+.cta-section:not(.cta-section--diwali)::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(207, 6, 83, 0.88);
-}
-
-.cta-content {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cta-content h2 {
-  font-family: var(--font-heading);
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-
-.cta-content p {
-  font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 28px;
-  line-height: 1.7;
 }
 
 /* ========== BLOG ========== */
