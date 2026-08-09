@@ -432,47 +432,11 @@ iframe {
 
   .cta-section,
   .cta-section--diwali {
-    padding: 48px 12px 56px;
+    padding: 32px 12px 40px;
   }
 
-  .diwali-promo-stage {
-    padding: 0 8px;
-  }
-
-  .diwali-hang-diya {
-    width: 40px;
-  }
-
-  .diwali-hang-diya--l1 { left: -4px; }
-  .diwali-hang-diya--l2 { left: 28px; }
-  .diwali-hang-diya--r1 { right: 28px; }
-  .diwali-hang-diya--r2 { right: -4px; }
-
-  .diwali-frame-body {
-    margin: 28px 12px 16px;
-    padding: 28px 20px 24px;
-  }
-
-  .diwali-promo-title {
-    letter-spacing: 3px;
-  }
-
-  .diwali-promo-ribbon {
-    padding: 8px 20px;
-    font-size: 16px;
-  }
-
-  .diwali-promo-ribbon::before,
-  .diwali-promo-ribbon::after {
-    border-width: 8px;
-  }
-
-  .diwali-promo-ribbon::before { left: -12px; }
-  .diwali-promo-ribbon::after { right: -12px; }
-
-  .diwali-corner-mandala {
-    width: 140px;
-    height: 140px;
+  .diwali-banner-wrap {
+    max-width: 360px;
   }
 
   .blog-section,
