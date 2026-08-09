@@ -608,9 +608,12 @@ iframe {
     min-height: 160px;
   }
 
-  .deals-content h2,
-  .cta-content h2 {
+  .deals-content h2 {
     font-size: 36px;
+  }
+
+  .cta-content h2 {
+    font-size: 24px;
   }
 
   .countdown-item {

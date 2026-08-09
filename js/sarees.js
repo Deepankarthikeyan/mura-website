@@ -49,8 +49,6 @@ const ALL_SAREES = [
   { name: 'Patola Silk Saree', cat: 'Silk Saree', category: 'silk', price: 5499, old: 8999, img: `${IMG}/patola.webp` },
   { name: 'Linen Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 1099, old: 1799, img: `${IMG}/linen-cotton.webp` },
   { name: 'Organza Designer Saree', cat: 'Designer Saree', category: 'party', price: 1899, old: 2999, img: `${IMG}/organza.webp` },
-  { name: 'Bandhani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 1799, old: 2799, img: `${IMG}/bandhani.webp` },
-  { name: 'Paithani Silk Saree', cat: 'Silk Saree', category: 'silk', price: 6499, old: 9999, img: `${IMG}/paithani.webp`, badge: 'Hot' },
   { name: 'Mysore Silk Saree', cat: 'Silk Saree', category: 'silk', price: 3999, old: 5999, img: `${IMG}/mysore.webp` },
   { name: 'Kalamkari Cotton Saree', cat: 'Cotton Saree', category: 'cotton', price: 999, old: 1599, img: `${IMG}/kalamkari.webp` },
   { name: 'Net Party Wear Saree', cat: 'Party Wear', category: 'party', price: 1499, old: 2299, img: `${IMG}/net-party.webp` },
