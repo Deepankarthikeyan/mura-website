@@ -66,8 +66,15 @@ function initTestimonialSlider() {
   if (typeof Swiper === 'undefined' || !document.querySelector('.testimonial-swiper')) return;
   new Swiper('.testimonial-swiper', {
     loop: true,
-    autoplay: { delay: 4000 },
+    speed: 600,
+    autoplay: { delay: 5000, disableOnInteraction: false },
     pagination: { el: '.testimonial-swiper .swiper-pagination', clickable: true },
+    navigation: {
+      nextEl: '.testimonial-swiper .swiper-button-next',
+      prevEl: '.testimonial-swiper .swiper-button-prev',
+    },
+    slidesPerView: 1,
+    spaceBetween: 24,
   });
 }
 
