@@ -455,8 +455,22 @@ iframe {
     padding: 40px 16px;
   }
 
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .testimonial-text {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .testimonial-card {
+    padding: 32px 24px 24px;
+  }
+
+  .testimonial-quote-icon {
+    font-size: 56px;
+    left: 16px;
   }
 
   /* Newsletter */

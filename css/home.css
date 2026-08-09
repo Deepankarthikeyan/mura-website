@@ -742,18 +742,15 @@
 }
 
 .testimonial-section-inner {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.testimonial-heading .testimonial-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--suruchi-primary);
-  margin-bottom: 10px;
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
 
 .testimonial-inner {
@@ -766,10 +763,21 @@
   background: var(--suruchi-white);
   border: 1px solid var(--suruchi-border);
   border-radius: 16px;
-  padding: 40px 36px 32px;
+  padding: 36px 28px 28px;
   box-shadow: 0 8px 32px rgba(207, 6, 83, 0.08);
-  max-width: 640px;
-  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-heading .testimonial-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--suruchi-primary);
+  margin-bottom: 10px;
 }
 
 .testimonial-quote-icon {
@@ -791,29 +799,32 @@
 }
 
 .testimonial-text {
-  font-size: 17px;
+  font-size: 15px;
   font-style: italic;
   color: var(--suruchi-gray);
   line-height: 1.85;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+  flex: 1;
 }
 
 .testimonial-author-block {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding-top: 20px;
+  justify-content: flex-start;
+  gap: 14px;
+  padding-top: 18px;
   border-top: 1px solid var(--suruchi-border);
+  margin-top: auto;
 }
 
 .testimonial-avatar {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(207, 6, 83, 0.2);
+  border: 3px solid var(--suruchi-primary);
+  box-shadow: 0 4px 16px rgba(207, 6, 83, 0.25);
 }
 
 .testimonial-author-info {
@@ -854,33 +865,61 @@
 
 /* ========== CTA SECTION — DIWALI FESTIVE ========== */
 .cta-section--diwali {
-  padding: 90px 20px;
+  padding: 100px 20px;
   position: relative;
   overflow: hidden;
   text-align: center;
   color: var(--suruchi-white);
-  background:
-    radial-gradient(ellipse at 20% 80%, rgba(255, 193, 7, 0.18) 0%, transparent 45%),
-    radial-gradient(ellipse at 80% 20%, rgba(255, 152, 0, 0.15) 0%, transparent 40%),
-    linear-gradient(135deg, #1a0533 0%, #4a0e2e 35%, #7a1040 65%, #cf0653 100%);
   border-top: 3px solid rgba(255, 193, 7, 0.45);
   border-bottom: 3px solid rgba(255, 193, 7, 0.45);
 }
 
-.cta-section--diwali::before,
-.cta-section--diwali::after {
-  content: '✦';
+.cta-diwali-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cta-diwali-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cta-diwali-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(255, 193, 7, 0.2) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 152, 0, 0.15) 0%, transparent 40%),
+    linear-gradient(
+      105deg,
+      rgba(26, 5, 51, 0.88) 0%,
+      rgba(122, 16, 64, 0.78) 35%,
+      rgba(207, 6, 83, 0.65) 65%,
+      rgba(160, 5, 67, 0.55) 100%
+    );
+}
+
+.cta-diwali-spark {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: clamp(48px, 8vw, 96px);
-  color: rgba(255, 193, 7, 0.12);
+  color: rgba(255, 193, 7, 0.15);
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
 }
 
-.cta-section--diwali::before { left: 4%; }
-.cta-section--diwali::after { right: 4%; }
+.cta-diwali-spark--left { left: 4%; }
+.cta-diwali-spark--right { right: 4%; }
+
+.cta-section--diwali::before,
+.cta-section--diwali::after {
+  display: none;
+}
 
 .cta-diwali-pattern {
   position: absolute;
@@ -888,7 +927,7 @@
   border: 2px dashed rgba(255, 193, 7, 0.35);
   border-radius: 12px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
 }
 
 .cta-diwali-pattern::before {
@@ -914,7 +953,7 @@
   border-radius: 50%;
   filter: blur(60px);
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
   animation: ctaGlowPulse 4s ease-in-out infinite alternate;
 }
 
@@ -942,7 +981,7 @@
   list-style: none;
   padding: 14px 20px 0;
   margin: 0;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -976,7 +1015,7 @@
 
 .cta-content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   max-width: 720px;
   margin: 0 auto;
   padding-top: 24px;
@@ -1061,7 +1100,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
   overflow: hidden;
 }
 
