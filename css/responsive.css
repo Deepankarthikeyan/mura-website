@@ -343,6 +343,7 @@ iframe {
 
   .banner-card-content {
     padding: 20px;
+    max-width: 75%;
   }
 
   .banner-card h3 {
@@ -419,6 +420,10 @@ iframe {
   .promo-banner {
     padding: 28px 24px;
     min-height: 180px;
+  }
+
+  .promo-banner > div {
+    max-width: 70%;
   }
 
   .promo-banner h3 {
