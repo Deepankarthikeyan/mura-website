@@ -250,9 +250,8 @@
 
 .suruchi-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 195px));
-  justify-content: center;
-  gap: 18px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
 
 .suruchi-product {
@@ -260,9 +259,6 @@
   border: 2px solid transparent;
   border-radius: 4px;
   overflow: hidden;
-  width: 100%;
-  max-width: 195px;
-  margin: 0 auto;
   transition: box-shadow 0.3s, border-color 0.3s;
 }
 
@@ -273,7 +269,7 @@
 
 .suruchi-product-img {
   position: relative;
-  aspect-ratio: 3/4;
+  aspect-ratio: 5/6;
   overflow: hidden;
   background: var(--suruchi-cream);
 }
@@ -304,7 +300,7 @@
 }
 
 .suruchi-product-info {
-  padding: 12px 8px;
+  padding: 16px 12px;
   text-align: center;
 }
 
@@ -316,9 +312,9 @@
 }
 
 .suruchi-product-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
-  margin: 4px 0 6px;
+  margin: 6px 0 8px;
   color: var(--suruchi-dark);
 }
 
@@ -333,13 +329,13 @@
 }
 
 .suruchi-product-price .current {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--suruchi-primary);
 }
 
 .suruchi-product-price .old {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--suruchi-gray);
   text-decoration: line-through;
 }
@@ -367,8 +363,8 @@
 
 .suruchi-action-btn {
   flex: 1;
-  padding: 8px;
-  font-size: 11px;
+  padding: 10px;
+  font-size: 12px;
   font-weight: 600;
   text-align: center;
   border: 1px solid var(--suruchi-border);
@@ -825,14 +821,14 @@
 
 /* ========== MOBILE ========== */
 @media (max-width: 1200px) {
-  .suruchi-products-grid { grid-template-columns: repeat(auto-fill, minmax(165px, 185px)); }
+  .suruchi-products-grid { grid-template-columns: repeat(4, 1fr); }
   .bestseller-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 992px) {
   .banner-grid { grid-template-columns: 1fr; }
   .banner-card.tall { min-height: 280px; }
-  .suruchi-products-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 175px)); }
+  .suruchi-products-grid { grid-template-columns: repeat(3, 1fr); }
   .deals-inner { grid-template-columns: 1fr; }
   .deals-product { grid-template-columns: 1fr; }
   .bestseller-grid { grid-template-columns: repeat(2, 1fr); }
@@ -840,11 +836,7 @@
 }
 
 @media (max-width: 768px) {
-  .suruchi-products-grid {
-    grid-template-columns: repeat(2, minmax(140px, 1fr));
-    max-width: 420px;
-    margin: 0 auto;
-  }
+  .suruchi-products-grid,
   .bestseller-grid,
   .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .promo-banners { grid-template-columns: 1fr; }
@@ -854,10 +846,7 @@
 }
 
 @media (max-width: 480px) {
-  .suruchi-products-grid {
-    grid-template-columns: repeat(2, minmax(130px, 1fr));
-    max-width: 360px;
-  }
+  .suruchi-products-grid,
   .bestseller-grid,
   .blog-grid { grid-template-columns: 1fr; }
   .service-bar-grid { grid-template-columns: 1fr; }
