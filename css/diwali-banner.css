@@ -990,8 +990,16 @@
 .dsb-corner-diya--br { bottom: 12%; right: 3%; }
 
 /* ---------- Reduced motion ---------- */
-.diwali-sale-banner.dsb-reduced-motion .dsb-panel-inner {
+.diwali-sale-banner.dsb-reduced-motion,
+.diwali-sale-banner.dsb-reduced-motion * {
   animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.diwali-sale-banner.dsb-reduced-motion .dsb-panel-inner {
+  transform: none !important;
 }
 
 /* ---------- Tablet ---------- */
