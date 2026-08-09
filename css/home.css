@@ -256,11 +256,15 @@
 
 .suruchi-product {
   background: var(--suruchi-white);
-  transition: box-shadow 0.3s;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.3s, border-color 0.3s;
 }
 
 .suruchi-product:hover {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(207, 6, 83, 0.15);
+  border-color: var(--suruchi-primary);
 }
 
 .suruchi-product-img {
@@ -296,7 +300,8 @@
 }
 
 .suruchi-product-info {
-  padding: 16px 0;
+  padding: 16px 12px;
+  text-align: center;
 }
 
 .suruchi-product-cat {
@@ -318,6 +323,7 @@
 .suruchi-product-price {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 8px;
 }
@@ -337,6 +343,7 @@
 .suruchi-stars {
   display: flex;
   gap: 2px;
+  justify-content: center;
   color: #ffc107;
   margin-bottom: 12px;
 }
