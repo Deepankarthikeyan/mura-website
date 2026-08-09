@@ -13,26 +13,23 @@
   --suruchi-white: #ffffff;
   --suruchi-cream: #FFFDE9;
   --suruchi-beige: #f3ece8;
-  --banner-overlay-hero: linear-gradient(
-    105deg,
-    rgba(207, 6, 83, 0.9) 0%,
-    rgba(160, 5, 67, 0.72) 38%,
-    rgba(43, 42, 41, 0.22) 68%,
-    rgba(43, 42, 41, 0.06) 100%
-  );
-  --banner-overlay-card:
+  --banner-overlay-light:
     linear-gradient(
       105deg,
-      rgba(207, 6, 83, 0.5) 0%,
-      rgba(160, 5, 67, 0.36) 38%,
+      rgba(207, 6, 83, 0.68) 0%,
+      rgba(160, 5, 67, 0.52) 38%,
       rgba(207, 6, 83, 0.22) 68%,
       rgba(207, 6, 83, 0.22) 100%
     );
+  --banner-overlay-hero: var(--banner-overlay-light);
+  --banner-overlay-card: var(--banner-overlay-light);
+  --banner-overlay-promo: var(--banner-overlay-light);
+  --banner-overlay-promo: var(--banner-overlay-light);
   --banner-overlay-card-tall:
     linear-gradient(
       to top,
-      rgba(207, 6, 83, 0.5) 0%,
-      rgba(160, 5, 67, 0.36) 32%,
+      rgba(207, 6, 83, 0.68) 0%,
+      rgba(160, 5, 67, 0.52) 32%,
       rgba(207, 6, 83, 0.22) 58%,
       rgba(207, 6, 83, 0.22) 100%
     );
