@@ -402,6 +402,8 @@ iframe {
   }
 
   .deals-product-info {
+    border-left: none;
+    border-top: 1px solid var(--suruchi-border);
     padding: 24px 20px;
   }
 
