@@ -64,17 +64,34 @@ function initCountdown() {
 
 function initTestimonialSlider() {
   if (typeof Swiper === 'undefined' || !document.querySelector('.testimonial-swiper')) return;
-  new Swiper('.testimonial-swiper', {
+
+  const thumbs = document.querySelectorAll('.testimonial-thumb');
+
+  const swiper = new Swiper('.testimonial-swiper', {
     loop: true,
-    speed: 600,
-    autoplay: { delay: 5000, disableOnInteraction: false },
+    speed: 700,
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    autoplay: { delay: 5500, disableOnInteraction: false },
     pagination: { el: '.testimonial-swiper .swiper-pagination', clickable: true },
     navigation: {
       nextEl: '.testimonial-swiper .swiper-button-next',
       prevEl: '.testimonial-swiper .swiper-button-prev',
     },
     slidesPerView: 1,
-    spaceBetween: 24,
+    on: {
+      slideChange(s) {
+        const index = s.realIndex;
+        thumbs.forEach((thumb, i) => thumb.classList.toggle('is-active', i === index));
+      },
+    },
+  });
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      const index = Number(thumb.dataset.index);
+      if (!Number.isNaN(index)) swiper.slideToLoop(index);
+    });
   });
 }
 
