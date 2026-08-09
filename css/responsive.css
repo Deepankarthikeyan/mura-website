@@ -432,7 +432,7 @@ iframe {
 
   .cta-section,
   .cta-section--diwali {
-    padding: 64px 16px;
+    padding: 64px 16px 72px;
   }
 
   .cta-festive-tag {
@@ -445,8 +445,39 @@ iframe {
     font-size: 28px;
   }
 
-  .cta-diwali-lights {
-    gap: 20px;
+  .diwali-garland span {
+    width: 12px;
+    height: 18px;
+  }
+
+  .diwali-rangoli {
+    width: 60px;
+    height: 60px;
+    opacity: 0.35;
+  }
+
+  .diwali-cracker {
+    transform: scale(0.85);
+  }
+
+  .diwali-cracker--left {
+    left: 2%;
+    bottom: 12%;
+  }
+
+  .diwali-cracker--right {
+    right: 2%;
+    bottom: 14%;
+    transform: scale(0.85) scaleX(-1);
+  }
+
+  .diwali-diya-row {
+    gap: 10px;
+  }
+
+  .diwali-diya-row li {
+    width: 18px;
+    height: 12px;
   }
 
   .blog-section,
