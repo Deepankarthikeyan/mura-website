@@ -22,10 +22,17 @@
   );
   --banner-overlay-card: linear-gradient(
     105deg,
-    rgba(207, 6, 83, 0.92) 0%,
-    rgba(160, 5, 67, 0.75) 40%,
-    rgba(43, 42, 41, 0.2) 70%,
-    rgba(43, 42, 41, 0.05) 100%
+    rgba(207, 6, 83, 0.95) 0%,
+    rgba(160, 5, 67, 0.85) 30%,
+    rgba(43, 42, 41, 0.62) 55%,
+    rgba(43, 42, 41, 0.55) 100%
+  );
+  --banner-overlay-card-tall: linear-gradient(
+    to top,
+    rgba(207, 6, 83, 0.95) 0%,
+    rgba(160, 5, 67, 0.82) 28%,
+    rgba(43, 42, 41, 0.58) 52%,
+    rgba(43, 42, 41, 0.52) 100%
   );
   --banner-overlay-promo: linear-gradient(
     105deg,
