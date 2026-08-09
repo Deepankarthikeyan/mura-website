@@ -35,6 +35,7 @@ function sareeProductCard(s, style = 'shop') {
       <p class="product-category">${s.cat}</p>
       <h3 class="product-name">${s.name}</h3>
       <div class="product-price"><span class="price-current">₹${s.price.toLocaleString('en-IN')}</span><span class="price-original">₹${s.old.toLocaleString('en-IN')}</span></div>
+      <div class="product-stars">★★★★★</div>
     </div>
   </div>`;
 }
