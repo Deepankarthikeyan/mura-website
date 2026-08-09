@@ -65,9 +65,7 @@ function initCountdown() {
 function initTestimonialSlider() {
   if (typeof Swiper === 'undefined' || !document.querySelector('.testimonial-swiper')) return;
 
-  const thumbs = document.querySelectorAll('.testimonial-thumb');
-
-  const swiper = new Swiper('.testimonial-swiper', {
+  new Swiper('.testimonial-swiper', {
     loop: true,
     speed: 700,
     effect: 'fade',
@@ -79,19 +77,6 @@ function initTestimonialSlider() {
       prevEl: '.testimonial-swiper .swiper-button-prev',
     },
     slidesPerView: 1,
-    on: {
-      slideChange(s) {
-        const index = s.realIndex;
-        thumbs.forEach((thumb, i) => thumb.classList.toggle('is-active', i === index));
-      },
-    },
-  });
-
-  thumbs.forEach((thumb) => {
-    thumb.addEventListener('click', () => {
-      const index = Number(thumb.dataset.index);
-      if (!Number.isNaN(index)) swiper.slideToLoop(index);
-    });
   });
 }
 

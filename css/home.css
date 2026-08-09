@@ -957,59 +957,6 @@
   z-index: 1;
 }
 
-.testimonial-thumb-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 28px;
-}
-
-.testimonial-thumb {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px 12px;
-  background: var(--suruchi-white);
-  border: 2px solid var(--suruchi-border);
-  border-radius: 16px;
-  cursor: pointer;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-  min-width: 88px;
-}
-
-.testimonial-thumb img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  border: 2px solid transparent;
-  transition: border-color 0.25s;
-}
-
-.testimonial-thumb span {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--suruchi-gray);
-  transition: color 0.25s;
-}
-
-.testimonial-thumb:hover,
-.testimonial-thumb.is-active {
-  border-color: var(--suruchi-primary);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(207, 6, 83, 0.15);
-}
-
-.testimonial-thumb.is-active img {
-  border-color: var(--suruchi-primary);
-}
-
-.testimonial-thumb.is-active span {
-  color: var(--suruchi-primary);
-}
-
 .testimonial-section .swiper-pagination {
   margin-top: 4px;
   position: relative;
