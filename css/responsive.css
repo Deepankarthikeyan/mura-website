@@ -131,21 +131,13 @@ iframe {
     margin-left: auto;
   }
 
-  .suruchi-search--mobile {
-    order: 3;
-    display: flex !important;
-    width: 100%;
-    max-width: none;
-    margin-top: 4px;
-  }
-
-  .suruchi-search--mobile select {
+  .suruchi-search-dropdown .suruchi-search--mobile select {
     min-width: 110px;
     padding: 10px 12px;
     font-size: 13px;
   }
 
-  .suruchi-search--mobile input {
+  .suruchi-search-dropdown .suruchi-search--mobile input {
     padding: 10px 12px;
     font-size: 13px;
   }
@@ -868,6 +860,7 @@ iframe {
   .suruchi-header-action,
   .suruchi-nav a,
   .suruchi-mobile-toggle,
+  .suruchi-search-toggle,
   .shop-filter-toggle,
   .btn {
     min-height: 44px;
@@ -923,10 +916,6 @@ iframe {
   background: var(--suruchi-cream);
   border: 1px solid var(--suruchi-border);
   color: var(--suruchi-dark);
-}
-
-.suruchi-search--mobile {
-  display: none;
 }
 
 @keyframes slideInSidebar {

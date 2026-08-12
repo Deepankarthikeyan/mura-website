@@ -52,6 +52,9 @@
         </button>
       </form>
       <div class="suruchi-header-actions">
+        <button class="suruchi-search-toggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="suruchi-search-dropdown">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
         <a href="login.html" class="suruchi-header-action">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
           <span>My Account</span>
@@ -66,20 +69,22 @@
           <span class="suruchi-badge cart-count">0</span>
         </a>
       </div>
-      <form class="suruchi-search suruchi-search--mobile" action="shop.html">
-        <select aria-label="Category">
-          <option>All Sarees</option>
-          <option>Silk Sarees</option>
-          <option>Cotton Sarees</option>
-          <option>Banarasi</option>
-          <option>Kanjivaram</option>
-          <option>Party Wear</option>
-        </select>
-        <input type="text" placeholder="Search sarees...">
-        <button type="submit" aria-label="Search">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        </button>
-      </form>
+      <div class="suruchi-search-dropdown" id="suruchi-search-dropdown">
+        <form class="suruchi-search suruchi-search--mobile" action="shop.html">
+          <select aria-label="Category">
+            <option>All Sarees</option>
+            <option>Silk Sarees</option>
+            <option>Cotton Sarees</option>
+            <option>Banarasi</option>
+            <option>Kanjivaram</option>
+            <option>Party Wear</option>
+          </select>
+          <input type="text" placeholder="Search sarees...">
+          <button type="submit" aria-label="Search">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </form>
+      </div>
     </div>
   `;
 
@@ -108,8 +113,27 @@
 
   const toggle = mount.querySelector('.suruchi-mobile-toggle');
   const closeBtn = nav.querySelector('.suruchi-nav-close');
+  const searchToggle = mount.querySelector('.suruchi-search-toggle');
+  const searchDropdown = mount.querySelector('.suruchi-search-dropdown');
+  const headerMain = mount.querySelector('.suruchi-header-main');
+
+  function closeSearch() {
+    if (!headerMain) return;
+    headerMain.classList.remove('is-search-open');
+    if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function openSearch() {
+    if (!headerMain) return;
+    closeMenu();
+    headerMain.classList.add('is-search-open');
+    if (searchToggle) searchToggle.setAttribute('aria-expanded', 'true');
+    const input = searchDropdown?.querySelector('input');
+    if (input) window.setTimeout(() => input.focus(), 120);
+  }
 
   function openMenu() {
+    closeSearch();
     nav.classList.add('open');
     overlay.classList.add('open');
     document.body.classList.add('menu-open');
@@ -129,6 +153,23 @@
       else openMenu();
     });
   }
+
+  if (searchToggle) {
+    searchToggle.addEventListener('click', () => {
+      if (headerMain?.classList.contains('is-search-open')) closeSearch();
+      else openSearch();
+    });
+  }
+
+  document.addEventListener('click', (event) => {
+    if (!headerMain?.classList.contains('is-search-open')) return;
+    if (event.target.closest('.suruchi-search-toggle, .suruchi-search-dropdown')) return;
+    closeSearch();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 991) closeSearch();
+  });
 
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
   overlay.addEventListener('click', closeMenu);
