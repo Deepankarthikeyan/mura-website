@@ -279,24 +279,9 @@ body.nav-is-fixed .suruchi-nav-spacer {
 
 .suruchi-search-toggle {
   display: none;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: var(--suruchi-dark);
-  flex-shrink: 0;
 }
 
-.suruchi-search-toggle:hover,
-.suruchi-header-main.is-search-open .suruchi-search-toggle {
-  color: var(--suruchi-primary);
-}
-
-.suruchi-search-dropdown {
+.suruchi-mobile-search {
   display: none;
 }
 
@@ -363,7 +348,7 @@ body.nav-is-fixed .suruchi-nav-spacer {
   }
 
   body.nav-is-fixed #site-header-mount:has(.is-search-open) {
-    padding-bottom: 136px;
+    padding-bottom: 132px;
   }
 }
 
@@ -372,18 +357,46 @@ body.nav-is-fixed .suruchi-nav-spacer {
 
   .suruchi-header-main {
     flex-wrap: wrap;
-    position: relative;
+  }
+
+  .suruchi-mobile-search {
+    display: block;
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 4px;
   }
 
   .suruchi-search-toggle {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 11px 14px;
+    border: 2px solid var(--suruchi-border);
+    border-radius: 4px;
+    background: var(--suruchi-white);
+    color: var(--suruchi-gray);
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
   }
 
-  .suruchi-search-dropdown {
-    display: block;
-    order: 4;
-    flex: 0 0 100%;
-    width: 100%;
+  .suruchi-search-toggle svg {
+    flex-shrink: 0;
+    color: var(--suruchi-dark);
+  }
+
+  .suruchi-mobile-search.is-search-open .suruchi-search-toggle {
+    border-color: var(--suruchi-primary);
+    color: var(--suruchi-primary);
+  }
+
+  .suruchi-mobile-search.is-search-open .suruchi-search-toggle svg {
+    color: var(--suruchi-primary);
+  }
+
+  .suruchi-search-panel {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -392,7 +405,7 @@ body.nav-is-fixed .suruchi-nav-spacer {
     margin-top: 0;
   }
 
-  .suruchi-header-main.is-search-open .suruchi-search-dropdown {
+  .suruchi-mobile-search.is-search-open .suruchi-search-panel {
     max-height: 72px;
     opacity: 1;
     pointer-events: auto;

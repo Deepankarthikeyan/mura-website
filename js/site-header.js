@@ -52,9 +52,6 @@
         </button>
       </form>
       <div class="suruchi-header-actions">
-        <button class="suruchi-search-toggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="suruchi-search-dropdown">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        </button>
         <a href="login.html" class="suruchi-header-action">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
           <span>My Account</span>
@@ -69,21 +66,27 @@
           <span class="suruchi-badge cart-count">0</span>
         </a>
       </div>
-      <div class="suruchi-search-dropdown" id="suruchi-search-dropdown">
-        <form class="suruchi-search suruchi-search--mobile" action="shop.html">
-          <select aria-label="Category">
-            <option>All Sarees</option>
-            <option>Silk Sarees</option>
-            <option>Cotton Sarees</option>
-            <option>Banarasi</option>
-            <option>Kanjivaram</option>
-            <option>Party Wear</option>
-          </select>
-          <input type="text" placeholder="Search sarees...">
-          <button type="submit" aria-label="Search">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </button>
-        </form>
+      <div class="suruchi-mobile-search" id="suruchi-mobile-search">
+        <button class="suruchi-search-toggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="suruchi-search-panel">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Search sarees...</span>
+        </button>
+        <div class="suruchi-search-panel" id="suruchi-search-panel">
+          <form class="suruchi-search suruchi-search--mobile" action="shop.html">
+            <select aria-label="Category">
+              <option>All Sarees</option>
+              <option>Silk Sarees</option>
+              <option>Cotton Sarees</option>
+              <option>Banarasi</option>
+              <option>Kanjivaram</option>
+              <option>Party Wear</option>
+            </select>
+            <input type="text" placeholder="Search sarees...">
+            <button type="submit" aria-label="Search">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   `;
@@ -114,21 +117,21 @@
   const toggle = mount.querySelector('.suruchi-mobile-toggle');
   const closeBtn = nav.querySelector('.suruchi-nav-close');
   const searchToggle = mount.querySelector('.suruchi-search-toggle');
-  const searchDropdown = mount.querySelector('.suruchi-search-dropdown');
-  const headerMain = mount.querySelector('.suruchi-header-main');
+  const mobileSearch = mount.querySelector('.suruchi-mobile-search');
+  const searchPanel = mount.querySelector('.suruchi-search-panel');
 
   function closeSearch() {
-    if (!headerMain) return;
-    headerMain.classList.remove('is-search-open');
+    if (!mobileSearch) return;
+    mobileSearch.classList.remove('is-search-open');
     if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
   }
 
   function openSearch() {
-    if (!headerMain) return;
+    if (!mobileSearch) return;
     closeMenu();
-    headerMain.classList.add('is-search-open');
+    mobileSearch.classList.add('is-search-open');
     if (searchToggle) searchToggle.setAttribute('aria-expanded', 'true');
-    const input = searchDropdown?.querySelector('input');
+    const input = searchPanel?.querySelector('input');
     if (input) window.setTimeout(() => input.focus(), 120);
   }
 
@@ -156,14 +159,14 @@
 
   if (searchToggle) {
     searchToggle.addEventListener('click', () => {
-      if (headerMain?.classList.contains('is-search-open')) closeSearch();
+      if (mobileSearch?.classList.contains('is-search-open')) closeSearch();
       else openSearch();
     });
   }
 
   document.addEventListener('click', (event) => {
-    if (!headerMain?.classList.contains('is-search-open')) return;
-    if (event.target.closest('.suruchi-search-toggle, .suruchi-search-dropdown')) return;
+    if (!mobileSearch?.classList.contains('is-search-open')) return;
+    if (event.target.closest('.suruchi-mobile-search')) return;
     closeSearch();
   });
 

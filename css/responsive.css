@@ -131,13 +131,13 @@ iframe {
     margin-left: auto;
   }
 
-  .suruchi-search-dropdown .suruchi-search--mobile select {
+  .suruchi-mobile-search .suruchi-search--mobile select {
     min-width: 110px;
     padding: 10px 12px;
     font-size: 13px;
   }
 
-  .suruchi-search-dropdown .suruchi-search--mobile input {
+  .suruchi-mobile-search .suruchi-search--mobile input {
     padding: 10px 12px;
     font-size: 13px;
   }
