@@ -22,17 +22,71 @@ function initHeroSlider() {
 function initProductTabs() {
   const tabs = document.querySelectorAll('.product-tab');
   const panes = document.querySelectorAll('.tab-pane');
+  const tabsList = document.querySelector('.product-tabs');
+  const prevBtn = document.querySelector('.product-tabs-arrow--prev');
+  const nextBtn = document.querySelector('.product-tabs-arrow--next');
   if (!tabs.length) return;
 
-  tabs.forEach(tab => {
+  const scrollStep = () => Math.max(120, Math.round((tabsList?.clientWidth || 240) * 0.65));
+
+  function setTabState(activeTab) {
+    tabs.forEach((tab) => {
+      const isActive = tab === activeTab;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    panes.forEach((pane) => pane.classList.remove('active'));
+    const target = document.querySelector(activeTab.dataset.target);
+    if (target) target.classList.add('active');
+  }
+
+  function scrollTabIntoView(tab) {
+    if (!tabsList || !tab) return;
+    const listRect = tabsList.getBoundingClientRect();
+    const tabRect = tab.getBoundingClientRect();
+    const offset = tabRect.left - listRect.left - (listRect.width - tabRect.width) / 2;
+    tabsList.scrollBy({ left: offset, behavior: 'smooth' });
+  }
+
+  function updateArrowState() {
+    if (!tabsList || !prevBtn || !nextBtn) return;
+    const maxScroll = tabsList.scrollWidth - tabsList.clientWidth;
+    prevBtn.disabled = tabsList.scrollLeft <= 4;
+    nextBtn.disabled = tabsList.scrollLeft >= maxScroll - 4;
+  }
+
+  function scrollTabs(direction) {
+    if (!tabsList) return;
+    tabsList.scrollBy({ left: direction * scrollStep(), behavior: 'smooth' });
+  }
+
+  tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      panes.forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      const target = document.querySelector(tab.dataset.target);
-      if (target) target.classList.add('active');
+      setTabState(tab);
+      scrollTabIntoView(tab);
     });
   });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => scrollTabs(-1));
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => scrollTabs(1));
+  }
+
+  if (tabsList) {
+    tabsList.addEventListener('scroll', updateArrowState, { passive: true });
+  }
+
+  window.addEventListener('resize', updateArrowState);
+  updateArrowState();
+
+  const activeTab = document.querySelector('.product-tab.active');
+  if (activeTab) {
+    requestAnimationFrame(() => scrollTabIntoView(activeTab));
+  }
 }
 
 function initCountdown() {

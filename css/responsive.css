@@ -413,12 +413,25 @@ iframe {
     font-size: 26px;
   }
 
+  .product-tabs-wrap {
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+
+  .product-tabs-arrow {
+    display: flex;
+    align-self: center;
+    width: 36px;
+    height: 36px;
+  }
+
   .product-tabs {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     justify-content: flex-start;
+    scroll-behavior: smooth;
     scrollbar-width: none;
-    margin-bottom: 28px;
+    scroll-snap-type: x proximity;
   }
 
   .product-tabs::-webkit-scrollbar {
@@ -426,10 +439,11 @@ iframe {
   }
 
   .product-tab {
-    padding: 10px 20px;
+    padding: 10px 18px;
     font-size: 12px;
     white-space: nowrap;
     flex-shrink: 0;
+    scroll-snap-align: start;
   }
 
   .suruchi-product-actions {
