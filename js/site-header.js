@@ -92,12 +92,14 @@
   nav.id = 'suruchi-nav';
   nav.innerHTML = `
     <div class="suruchi-nav-inner">
-      <button class="suruchi-nav-close" aria-label="Close menu" type="button">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-      <a href="index.html" class="suruchi-nav-logo" aria-label="MuRa@23 Home">
-        <img src="images/mura-newlogo.png" alt="MuRa@23" width="97" height="60" decoding="async">
-      </a>
+      <div class="suruchi-nav-header">
+        <a href="index.html" class="suruchi-nav-logo" aria-label="MuRa@23 Home">
+          <img src="images/mura-newlogo.png" alt="MuRa@23" width="97" height="60" decoding="async">
+        </a>
+        <button class="suruchi-nav-close" aria-label="Close menu" type="button">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
       <ul>${navLinks}</ul>
     </div>`;
 

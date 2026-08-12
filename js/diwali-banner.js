@@ -7,11 +7,29 @@
   if (!banner) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   if (reducedMotion) {
     banner.classList.add('dsb-reduced-motion', 'dsb-loaded');
     return;
   }
+
+  if (!finePointer) {
+    banner.classList.add('dsb-no-parallax');
+  }
+
+  let scrollTimer = null;
+  const pauseDuringScroll = () => {
+    banner.classList.add('dsb-is-scrolling');
+    if (scrollTimer) window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      banner.classList.remove('dsb-is-scrolling');
+      scrollTimer = null;
+    }, 180);
+  };
+
+  window.addEventListener('scroll', pauseDuringScroll, { passive: true });
+  window.addEventListener('touchmove', pauseDuringScroll, { passive: true });
 
   /* Randomize floating particle & light-sweep durations */
   banner.querySelectorAll('.dsb-saree-particles span').forEach((el) => {
@@ -71,7 +89,7 @@
     });
   }
 
-  /* Subtle mouse parallax */
+  /* Subtle mouse parallax — desktop pointer only */
   let parallaxRaf = null;
 
   const resetParallax = () => {
@@ -80,6 +98,7 @@
   };
 
   const handlePointerMove = (event) => {
+    if (!finePointer || banner.classList.contains('dsb-is-scrolling')) return;
     if (parallaxRaf) return;
     parallaxRaf = requestAnimationFrame(() => {
       const rect = banner.getBoundingClientRect();
@@ -91,8 +110,12 @@
     });
   };
 
-  banner.addEventListener('mousemove', handlePointerMove);
-  banner.addEventListener('mouseleave', resetParallax);
+  if (finePointer) {
+    banner.addEventListener('mousemove', handlePointerMove);
+    banner.addEventListener('mouseleave', resetParallax);
+  } else {
+    resetParallax();
+  }
 
   requestAnimationFrame(() => banner.classList.add('dsb-loaded'));
 })();

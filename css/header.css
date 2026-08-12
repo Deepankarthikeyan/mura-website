@@ -294,6 +294,10 @@ body.nav-is-fixed .suruchi-nav-spacer {
     visibility: visible !important;
   }
 
+  .suruchi-nav-header {
+    display: contents;
+  }
+
   .suruchi-nav.is-scrolled {
     position: fixed;
     top: 0 !important;
