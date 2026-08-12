@@ -277,14 +277,6 @@ body.nav-is-fixed .suruchi-nav-spacer {
   color: var(--suruchi-dark);
 }
 
-.suruchi-search-toggle {
-  display: none;
-}
-
-.suruchi-mobile-search {
-  display: none;
-}
-
 .suruchi-nav.open {
   display: block;
 }
@@ -346,10 +338,6 @@ body.nav-is-fixed .suruchi-nav-spacer {
   body.nav-is-fixed #site-header-mount {
     padding-bottom: 72px;
   }
-
-  body.nav-is-fixed #site-header-mount:has(.is-search-open) {
-    padding-bottom: 132px;
-  }
 }
 
 @media (max-width: 992px) {
@@ -359,63 +347,40 @@ body.nav-is-fixed .suruchi-nav-spacer {
     flex-wrap: wrap;
   }
 
-  .suruchi-mobile-search {
-    display: block;
+  .suruchi-search--mobile {
+    display: flex !important;
     order: 3;
     flex: 0 0 100%;
     width: 100%;
-    margin-top: 4px;
-  }
-
-  .suruchi-search-toggle {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    padding: 11px 14px;
-    border: 2px solid var(--suruchi-border);
-    border-radius: 4px;
-    background: var(--suruchi-white);
-    color: var(--suruchi-gray);
-    font-size: 14px;
-    cursor: pointer;
-    text-align: left;
-  }
-
-  .suruchi-search-toggle svg {
-    flex-shrink: 0;
-    color: var(--suruchi-dark);
-  }
-
-  .suruchi-mobile-search.is-search-open .suruchi-search-toggle {
-    border-color: var(--suruchi-primary);
-    color: var(--suruchi-primary);
-  }
-
-  .suruchi-mobile-search.is-search-open .suruchi-search-toggle svg {
-    color: var(--suruchi-primary);
-  }
-
-  .suruchi-search-panel {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.25s ease;
-    margin-top: 0;
-  }
-
-  .suruchi-mobile-search.is-search-open .suruchi-search-panel {
-    max-height: 72px;
-    opacity: 1;
-    pointer-events: auto;
-    margin-top: 8px;
-  }
-
-  .suruchi-search--mobile {
-    display: flex;
-    width: 100%;
     max-width: none;
+    margin-top: 4px;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .suruchi-search--mobile select {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 96px;
+    max-width: 38%;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .suruchi-search--mobile input {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .suruchi-search--mobile button {
+    flex: 0 0 44px;
+    width: 44px;
+    min-width: 44px;
+    padding: 0;
+    justify-content: center;
   }
 }
 

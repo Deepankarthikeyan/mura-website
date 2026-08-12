@@ -131,17 +131,6 @@ iframe {
     margin-left: auto;
   }
 
-  .suruchi-mobile-search .suruchi-search--mobile select {
-    min-width: 110px;
-    padding: 10px 12px;
-    font-size: 13px;
-  }
-
-  .suruchi-mobile-search .suruchi-search--mobile input {
-    padding: 10px 12px;
-    font-size: 13px;
-  }
-
   .shop-layout {
     padding: 32px 0;
     gap: 24px;
@@ -860,7 +849,6 @@ iframe {
   .suruchi-header-action,
   .suruchi-nav a,
   .suruchi-mobile-toggle,
-  .suruchi-search-toggle,
   .shop-filter-toggle,
   .btn {
     min-height: 44px;
