@@ -66,20 +66,6 @@
           <span class="suruchi-badge cart-count">0</span>
         </a>
       </div>
-      <form class="suruchi-search suruchi-search--mobile" action="shop.html">
-        <select aria-label="Category">
-          <option>All Sarees</option>
-          <option>Silk Sarees</option>
-          <option>Cotton Sarees</option>
-          <option>Banarasi</option>
-          <option>Kanjivaram</option>
-          <option>Party Wear</option>
-        </select>
-        <input type="text" placeholder="Search sarees...">
-        <button type="submit" aria-label="Search">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        </button>
-      </form>
     </div>
   `;
 

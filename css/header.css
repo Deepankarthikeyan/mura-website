@@ -341,14 +341,11 @@ body.nav-is-fixed .suruchi-nav-spacer {
 }
 
 @media (max-width: 992px) {
-  .suruchi-search:not(.suruchi-search--mobile) { display: none; }
-
   .suruchi-header-main {
     flex-wrap: wrap;
   }
 
-  .suruchi-search--mobile {
-    display: flex !important;
+  .suruchi-header-main > .suruchi-search {
     order: 3;
     flex: 0 0 100%;
     width: 100%;
@@ -358,7 +355,7 @@ body.nav-is-fixed .suruchi-nav-spacer {
     box-sizing: border-box;
   }
 
-  .suruchi-search--mobile select {
+  .suruchi-header-main > .suruchi-search select {
     flex: 0 0 auto;
     width: auto;
     min-width: 96px;
@@ -367,7 +364,7 @@ body.nav-is-fixed .suruchi-nav-spacer {
     font-size: 12px;
   }
 
-  .suruchi-search--mobile input {
+  .suruchi-header-main > .suruchi-search input {
     flex: 1 1 auto;
     min-width: 0;
     width: auto;
@@ -375,7 +372,7 @@ body.nav-is-fixed .suruchi-nav-spacer {
     font-size: 13px;
   }
 
-  .suruchi-search--mobile button {
+  .suruchi-header-main > .suruchi-search button {
     flex: 0 0 44px;
     width: 44px;
     min-width: 44px;
