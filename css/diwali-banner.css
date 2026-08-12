@@ -1023,13 +1023,16 @@
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-  .diwali-sale-banner { height: auto; min-height: 620px; }
+  .diwali-sale-banner { height: auto; min-height: 620px; overflow: hidden; }
 
   .dsb-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: 0;
     padding: 48px 16px 32px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .dsb-sarees {

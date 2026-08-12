@@ -42,9 +42,38 @@ iframe {
 }
 
 /* ========== LAPTOP (1200px – 1399px) ========== */
-@media (max-width: 1399px) {
+@media (max-width: 1399px) and (min-width: 1200px) {
   .suruchi-products-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Product grids — must come after home.css and override only at each tier */
+@media (max-width: 1199px) {
+  .suruchi-products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .suruchi-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .suruchi-products-grid,
+  .bestseller-grid,
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .suruchi-products-grid,
+  .bestseller-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -179,8 +208,8 @@ iframe {
   }
 }
 
-/* ========== MOBILE (max 767px) ========== */
-@media (max-width: 767px) {
+/* ========== MOBILE (max 768px) ========== */
+@media (max-width: 768px) {
   body {
     font-size: 15px;
   }
@@ -247,6 +276,25 @@ iframe {
     visibility: visible;
   }
 
+  .suruchi-nav.is-scrolled {
+    position: fixed;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: translateX(-100%);
+    visibility: hidden;
+    box-shadow: none;
+    height: auto;
+    overflow-y: auto;
+    padding-top: 12px;
+  }
+
+  .suruchi-nav.is-scrolled.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
   .suruchi-nav-inner {
     flex-direction: column;
     align-items: stretch;
@@ -304,6 +352,12 @@ iframe {
   }
 
   /* Hero */
+  .hero-slider .hero-swiper,
+  .hero-slider .swiper-wrapper,
+  .hero-slider .swiper-slide {
+    min-height: 360px;
+  }
+
   .hero-slide {
     min-height: 360px;
   }
@@ -381,6 +435,14 @@ iframe {
   .suruchi-product-actions {
     opacity: 1;
     transform: none;
+    flex-wrap: wrap;
+  }
+
+  .suruchi-action-btn {
+    white-space: normal;
+    font-size: 10px;
+    padding: 8px 6px;
+    line-height: 1.2;
   }
 
   /* Deals */
@@ -656,6 +718,12 @@ iframe {
   }
 
   .hero-slide {
+    min-height: 300px;
+  }
+
+  .hero-slider .hero-swiper,
+  .hero-slider .swiper-wrapper,
+  .hero-slider .swiper-slide {
     min-height: 300px;
   }
 
