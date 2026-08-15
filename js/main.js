@@ -78,7 +78,7 @@ function initShopFilters() {
       link.classList.add('active');
 
       const category = link.dataset.category;
-      const products = document.querySelectorAll('.shop-products .product-card');
+      const products = document.querySelectorAll('.shop-products .suruchi-product');
       let visible = 0;
 
       products.forEach((product) => {
@@ -98,7 +98,7 @@ function initShopFilters() {
     sortSelect.addEventListener('change', () => {
       const grid = document.querySelector('.shop-products');
       if (!grid) return;
-      const cards = Array.from(grid.querySelectorAll('.product-card'));
+      const cards = Array.from(grid.querySelectorAll('.suruchi-product'));
 
       cards.sort((a, b) => {
         const priceA = parseFloat(a.dataset.price);
@@ -121,7 +121,7 @@ function initShopFilters() {
     filterBtn.addEventListener('click', () => {
       const min = parseFloat(document.getElementById('price-min')?.value) || 0;
       const max = parseFloat(document.getElementById('price-max')?.value) || Infinity;
-      const products = document.querySelectorAll('.shop-products .product-card');
+      const products = document.querySelectorAll('.shop-products .suruchi-product');
       let visible = 0;
 
       products.forEach((product) => {

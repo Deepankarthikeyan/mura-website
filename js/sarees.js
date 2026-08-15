@@ -7,8 +7,11 @@ function sareeProductCard(s, style = 'shop') {
           <button class="suruchi-action-btn primary add-to-cart" type="button">+ Add to cart</button>
           <button class="suruchi-action-btn wishlist-btn" type="button">♡</button>
         </div>`;
-  if (style === 'home' || style === 'bestseller') {
-    return `<div class="suruchi-product">
+  const dataAttrs = style === 'shop'
+    ? ` data-category="${s.category}" data-price="${s.price}" data-name="${s.name}"`
+    : '';
+
+  return `<div class="suruchi-product"${dataAttrs}>
       <div class="suruchi-product-img">
         <a href="shop.html"><img src="${s.img}" alt="${s.name}" loading="lazy"></a>
         <span class="suruchi-product-badge">${badge}</span>
@@ -21,23 +24,6 @@ function sareeProductCard(s, style = 'shop') {
         ${actions}
       </div>
     </div>`;
-  }
-  return `<div class="product-card" data-category="${s.category}" data-price="${s.price}" data-name="${s.name}">
-    <div class="product-image">
-      <img src="${s.img}" alt="${s.name}" loading="lazy">
-      <span class="product-badge">${badge}</span>
-      <div class="product-actions">
-        <button class="product-action-btn wishlist-btn" type="button" aria-label="Wishlist"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></button>
-        <button class="product-action-btn add-to-cart" type="button" aria-label="Add to cart"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272"/></svg></button>
-      </div>
-    </div>
-    <div class="product-info">
-      <p class="product-category">${s.cat}</p>
-      <h3 class="product-name">${s.name}</h3>
-      <div class="product-price"><span class="price-current">₹${s.price.toLocaleString('en-IN')}</span><span class="price-original">₹${s.old.toLocaleString('en-IN')}</span></div>
-      <div class="product-stars">★★★★★</div>
-    </div>
-  </div>`;
 }
 
 const ALL_SAREES = [
